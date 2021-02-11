@@ -11,6 +11,22 @@
   font-style: normal;
 }
 
+.bg-beige {
+  background-color: rgb(219, 221, 122);
+}
+
+.bg-yellow {
+  background-color: rgb(200, 121, 68);
+}
+
+.bg-orange {
+  background-color: rgb(211, 94, 52);
+}
+
+.bg-gray {
+  background-color: rgb(161, 134, 134);
+}
+
 .heading-container {
   font-family: 'MyFont';
   background-color: rgb(224, 188, 194);
@@ -22,18 +38,12 @@
 .project-container {
   font-family: 'MyFont';
   background-color: rgb(211, 151, 161);
-  padding: 20px;
+  padding: 40px;
 }
 
 .todo-container {
   background-color: rgb(182, 125, 134);
   padding: 30px;
-}
-
-.card {
-  background-color: peachpuff;
-  transition: 0.3s;
-  width: 20%;
 }
 
 .container {
@@ -42,4 +52,23 @@
 
 .fas .fa-plus {
  font-size: 30px;
+}
+
+.project-heading {
+  text-align: center;
+  font-weight: bold;
+}
+
+.project-cards{
+  width: 80%;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.card-1 {
+  transition: 0.3s;
+  width: 30%;
+  padding: 30px 30px;
+  margin: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.568);
 }
