@@ -36,13 +36,12 @@
 }
 
 .project-container {
-  font-family: 'MyFont';
-  background-color: rgb(211, 151, 161);
+  background-color: rgb(219, 169, 178);
   padding: 40px;
 }
 
 .todo-container {
-  background-color: rgb(182, 125, 134);
+  background-color: rgb(207, 152, 161);
   padding: 30px;
 }
 
@@ -55,6 +54,7 @@
 }
 
 .project-heading {
+  font-family: 'MyFont';
   text-align: center;
   font-weight: bold;
 }
@@ -71,4 +71,15 @@
   padding: 30px 30px;
   margin: 10px;
   border: 2px solid rgba(255, 255, 255, 0.568);
+}
+
+.todo-heading {
+  font-family: 'MyFont';
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.no-display {
+  display: none;
 }

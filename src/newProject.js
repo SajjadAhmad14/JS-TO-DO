@@ -6,6 +6,7 @@ const Project = (() => {
     <button>Add</button>
     `;
     projectContainer.appendChild(form);
+    
   }
     return { addProject };
 })();
