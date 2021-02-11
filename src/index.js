@@ -2,8 +2,8 @@ import './style.css';
 import './properties.js';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Project from './newProject';
-
+import ProjectForm from './newProject';
+import './addProject';
 
 //selectors
 const addSign = document.querySelector('#add-project');
@@ -19,5 +19,8 @@ const clearContent = () => {
 //event listners
 addSign.addEventListener('click', () => {
   clearContent();
-  Project.addProject();
+  ProjectForm.addProjectForm();
 });
+
+const form = document.querySelector('form');
+console.log(form);

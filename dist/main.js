@@ -670,13 +670,23 @@ eval("module.exports = __webpack_require__.p + \"4c789041ac99d2061ce6.ttf\";\n\n
 
 /***/ }),
 
+/***/ "./src/addProject.js":
+/*!***************************!*\
+  !*** ./src/addProject.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ project)\n/* harmony export */ });\nfunction project(title) {\n  this.title = title;\n}\n\n//# sourceURL=webpack://JS-TO-DO/./src/addProject.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _properties_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./properties.js */ \"./src/properties.js\");\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.esm.js\");\n/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ \"./node_modules/bootstrap/dist/css/bootstrap.min.css\");\n/* harmony import */ var _newProject__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./newProject */ \"./src/newProject.js\");\n\n\n\n\n\n\n\n//selectors\nconst addSign = document.querySelector('#add-project');\n\n//functions\nconst clearContent = () => {\n  const content = document.getElementById(\"project-content\");\n  document.querySelectorAll('.card-1').forEach(card => card.remove());\n};\n\n\n\n//event listners\naddSign.addEventListener('click', () => {\n  clearContent();\n  _newProject__WEBPACK_IMPORTED_MODULE_4__.default.addProject();\n});\n\n//# sourceURL=webpack://JS-TO-DO/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _properties_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./properties.js */ \"./src/properties.js\");\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.esm.js\");\n/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ \"./node_modules/bootstrap/dist/css/bootstrap.min.css\");\n/* harmony import */ var _newProject__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./newProject */ \"./src/newProject.js\");\n/* harmony import */ var _addProject__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./addProject */ \"./src/addProject.js\");\n\n\n\n\n\n\n\n//selectors\nconst addSign = document.querySelector('#add-project');\n\n//functions\nconst clearContent = () => {\n  const content = document.getElementById(\"project-content\");\n  document.querySelectorAll('.card-1').forEach(card => card.remove());\n};\n\n\n\n//event listners\naddSign.addEventListener('click', () => {\n  clearContent();\n  _newProject__WEBPACK_IMPORTED_MODULE_4__.default.addProjectForm();\n});\n\nconst form = document.querySelector('form');\nconsole.log(form);\n\n//# sourceURL=webpack://JS-TO-DO/./src/index.js?");
 
 /***/ }),
 
@@ -686,7 +696,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
   \***************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst Project = (() => {\n  const addProject = () => {\n    const projectContainer = document.querySelector('.project-container');\n    const form = document.createElement('form');\n    form.innerHTML = `<input type = 'text'>\n    <button>Add</button>\n    `;\n    projectContainer.appendChild(form);\n    \n  }\n    return { addProject };\n})();\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Project);\n\n\n//# sourceURL=webpack://JS-TO-DO/./src/newProject.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst ProjectForm = (() => {\n  const addProjectForm = () => {\n    const projectContainer = document.querySelector('.project-container');\n    const form = document.createElement('form');\n    form.innerHTML = `<input type = 'text'>\n    `;\n    const btn = document.createElement('INPUT');\n    btn.setAttribute(\"type\", \"submit\");\n    btn.setAttribute('id', 'add-project-btn');\n    form.appendChild(btn);\n    projectContainer.appendChild(form);\n  }\n    return { addProjectForm };\n})();\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ProjectForm);\n\n\n//# sourceURL=webpack://JS-TO-DO/./src/newProject.js?");
 
 /***/ }),
 
