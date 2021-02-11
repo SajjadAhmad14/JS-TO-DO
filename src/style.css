@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+/* .flex {
+  display: flex;
+  justify-content: space-between;
+} */
+
 .heading-container {
   background-color: rgb(224, 188, 194);;
   padding: 20px;
@@ -19,4 +24,15 @@
 .todo-container {
   background-color: rgb(182, 125, 134);
   padding: 30px;
+}
+
+.card {
+  background-color: peachpuff;
+  /* box-shadow: 0 4px 8px 0 rgba(13, 15, 148, 0.2); */
+  transition: 0.3s;
+  width: 20%;
+}
+
+.container {
+  padding: 2px 16px;
 }
