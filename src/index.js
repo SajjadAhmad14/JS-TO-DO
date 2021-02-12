@@ -4,12 +4,13 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProjectForm from './newProject';
 import './addProject';
+import Project from './addProject';
 
 window.addEventListener('DOMContentLoaded', ProjectForm.hideForm);
 
 //selectors
 const addSign = document.querySelector('#add-project');
-
+const form = document.getElementById('form');
 
 //functions
 const clearContent = () => {
@@ -22,8 +23,11 @@ let projects = [];
 addSign.addEventListener('click', () => {
   clearContent();
   ProjectForm.showForm();
-  const submitBtn = document.getElementById('submit-form');
-  console.log(submitBtn);
-  ProjectForm.formDetails(submitBtn);
 });
 
+form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const title = document.getElementById('project-title').value;
+      const project = new Project(title);
+      projects.push(project);
+});
