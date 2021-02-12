@@ -5,8 +5,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ProjectForm from './newProject';
 import './addProject';
 
+window.addEventListener('DOMContentLoaded', ProjectForm.hideForm);
+
 //selectors
 const addSign = document.querySelector('#add-project');
+
 
 //functions
 const clearContent = () => {
@@ -18,9 +21,9 @@ const clearContent = () => {
 let projects = [];
 addSign.addEventListener('click', () => {
   clearContent();
-  ProjectForm.addProjectForm();
-  const btn = document.querySelector('#add-project-btn');
-  const title = document.getElementById('project-title');
-  btn.addEventListener('submit', (e) => {
-  });
+  ProjectForm.showForm();
+  const submitBtn = document.getElementById('submit-form');
+  console.log(submitBtn);
+  ProjectForm.formDetails(submitBtn);
 });
+
