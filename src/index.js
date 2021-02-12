@@ -14,13 +14,13 @@ const clearContent = () => {
   document.querySelectorAll('.card-1').forEach(card => card.remove());
 };
 
-
-
 //event listners
+let projects = [];
 addSign.addEventListener('click', () => {
   clearContent();
   ProjectForm.addProjectForm();
+  const btn = document.querySelector('#add-project-btn');
+  const title = document.getElementById('project-title');
+  btn.addEventListener('submit', (e) => {
+  });
 });
-
-const form = document.querySelector('form');
-console.log(form);

@@ -2,7 +2,7 @@ const ProjectForm = (() => {
   const addProjectForm = () => {
     const projectContainer = document.querySelector('.project-container');
     const form = document.createElement('form');
-    form.innerHTML = `<input type = 'text'>
+    form.innerHTML = `<input type = 'text' id = 'project-title'>
     `;
     const btn = document.createElement('INPUT');
     btn.setAttribute("type", "submit");

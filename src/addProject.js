@@ -1,3 +1,3 @@
-export default function project(title) {
+export default function Project(title) {
   this.title = title;
 }
