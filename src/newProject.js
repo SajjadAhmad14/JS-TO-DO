@@ -1,15 +1,7 @@
+import Projects from './project.js';
+import clearContent from './index.js'
+
 const ProjectForm = (() => {
-  // const addProjectForm = () => {
-  //   const projectContainer = document.querySelector('.project-container');
-  //   const form = document.createElement('form');
-  //   form.innerHTML = `<input type = 'text' id = 'project-title'>
-  //   `;
-  //   const btn = document.createElement('INPUT');
-  //   btn.setAttribute("type", "submit");
-  //   btn.setAttribute('id', 'add-project-btn');
-  //   form.appendChild(btn);
-  //   projectContainer.appendChild(form);
-  // };
 
   const showForm = (() => {
     document.getElementById('form').style.display = 'block';
@@ -19,15 +11,16 @@ const ProjectForm = (() => {
     document.getElementById('form').style.display = 'none';
   });
 
-  const formDetails = ((btn) => {
-    btn.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const title = document.getElementById('project-title');
-      console.log(title);
-    });
+  const viewAllProject = (() => {
+    const main = document.getElementById('main-container');
+    const ptitle = document.createElement('h1');
+    for(let i=0; i<Projects.length; i++) {
+      ptitle.textContent = Projects[i].title;
+    }
+    main.appendChild(ptitle);
   });
 
-    return { showForm, hideForm, formDetails };
+    return { showForm, hideForm, viewAllProject };
 })();
 
 

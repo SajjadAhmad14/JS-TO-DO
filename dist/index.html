@@ -9,12 +9,13 @@
 </head>
 
 <body>
-  <div class="heading-container">
-    <h1>To Do</h1>
-  </div>
-  <div class="project-container">
-    <h2 class="project-heading">Projects</i></h2>
-    <div class="d-flex project-cards" id="project-content">
+  <main id="main-container">
+    <div class="heading-container">
+      <h1>To Do</h1>
+    </div>
+    <div class="project-container">
+      <h2 class="project-heading">Projects</i></h2>
+      <div class="d-flex project-cards" id="project-content">
         <div class="card-1 bg-yellow" id="p-card">
           <div class="container">
             <h4>Work</h4>
@@ -32,28 +33,29 @@
         </div>
         <div class="card-1 bg-gray">
           <div class="container">
-            <h4>Add New  <i class="fa fa-plus" aria-hidden="true" id="add-project"></i></h4>
+            <h4>Add New <i class="fa fa-plus" aria-hidden="true" id="add-project"></i></h4>
           </div>
         </div>
         <div class="card-1 bg-gray">
           <div class="container">
-            <h4>View All  <i class="fa fa-arrow-right" aria-hidden="true"></i></h4>
+            <h4 id='view-project'>View All <i class="fa fa-arrow-right" aria-hidden="true"></i></h4>
           </div>
         </div>
+      </div>
+      <div>
+        <form id='form'>
+          <div class="form-group">
+            <input type="text" class="form-control w-50 m-auto" id="project-title" required=true
+              placeholder="Enter project title!">
+          </div>
+          <button type="submit" id="submit-form" name="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
     </div>
-
-    <div>
-      <form id='form'>
-        <div class="form-group">
-          <input type="text" class="form-control w-50 m-auto" id="project-title" required=true placeholder="Enter project title!">
-        </div>
-        <button type="submit" id = "submit-form" name="submit" class="btn btn-primary">Submit</button>
-      </form>
+    <div class="todo-container">
+      <h3 class="todo-heading">Add To Do</h3>
     </div>
-  </div>
-  <div class="todo-container">
-    <h3 class="todo-heading">Add To Do</h3>
-  </div>
+  </main>
   <script src='main.js'></script>
 </body>
 
