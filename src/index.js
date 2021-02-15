@@ -58,7 +58,12 @@ const createListObject = (form) => {
     const description = document.getElementById('description').value;
     const duedate = document.getElementById('duedate').value;
     const priority = document.getElementById('priority').value;
-    const list = new TodoItem(title, description, duedate, priority);
-    console.log(list);
+    const list = new TodoItem(title, description, duedate, priority); 
+    console.log(list); // 
+    // Creating new object of TodoItem class and 
+    //Adding new todo in the array let's say it ToDOArray
+
+    //1. check the project value selected in the form.
+    //2. we have to add the todo item in the respective project array
   });
 };

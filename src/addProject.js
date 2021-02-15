@@ -1,4 +1,4 @@
 export default function Project(title) {
   this.title = title;
-  items = []
+  this.items = [];
 }
