@@ -1,3 +1,4 @@
+import TodoItem from './properties'
 const addToDoForm = (() => {
 
   const todoForm = (()=> {
@@ -16,7 +17,7 @@ const addToDoForm = (() => {
           <option value="medium">Medium</option>
           <option value="low">Low</option>
         </select><br>
-        <input type="submit" value="Add"></input>
+        <input type="submit" value="Add" id = 'submit'></input>
     `;
     todoContainer.appendChild(todoForm);
   });

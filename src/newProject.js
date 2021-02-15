@@ -15,7 +15,6 @@ const ProjectForm = (() => {
     const projectContainer = document.querySelector('.project-container');
     const projectList = document.createElement('div');
     for(let i=0; i<Projects.length; i++) {
-      // ptitle.textContent = Projects[i].title;
       const h2 = document.createElement('h2');
       h2.textContent = Projects[i].title;
       projectList.appendChild(h2);

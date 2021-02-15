@@ -8,7 +8,7 @@ import Project from './addProject';
 import Projects from './project.js';
 import addToDoForm from './addToDo.js'
 
-window.addEventListener('DOMContentLoaded', ProjectForm.hideForm, addToDoForm.hideForm);
+window.addEventListener('DOMContentLoaded', ProjectForm.hideForm);
 
 //selectors
 const addSign = document.querySelector('#add-project');
@@ -16,7 +16,6 @@ const form = document.getElementById('form');
 const viewProjectBtn = document.getElementById('view-project');
 // const todoForm = document.getElementById('todo-form');
 const todobtn = document.getElementById('add-todo');
-
 //functions
 const clearContent = () => {
   const content = document.getElementById("project-content");
@@ -47,6 +46,10 @@ viewProjectBtn.addEventListener('click', () => {
 });
 
 todobtn.addEventListener('click', () => {
-  addToDoForm.todoForm(); 
-})
-
+  addToDoForm.todoForm();
+  const btn = document.getElementById('submit');
+  btn.addEventListener('submit', (e) => {
+    e.preventDefault();
+   console.log('hello');
+  });
+});

@@ -1,4 +1,4 @@
-class TodoProperties {
+class TodoItem {
   constructor(title, description,dueDate,priority) {
     this.title = title;
     this.description = description;
@@ -7,4 +7,4 @@ class TodoProperties {
   }
 }
 
-export default TodoProperties;
+export default TodoItem;
