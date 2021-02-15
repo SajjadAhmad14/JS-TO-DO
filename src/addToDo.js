@@ -6,32 +6,34 @@ const addToDoForm = (() => {
   const todoForm = (()=> {
     const todoContainer = document.getElementById('todo-form');
     const todoForm = document.createElement('form');
-    // const optionValue = function (project) {
-    //   for(let i=0; i<Projects.length; i++) {
-    //     const opt = document.createElement('option');
-    //     opt.textContent = Projects[i].title;
-    //     opt.value = Projects[i].title;
-    //     project.appendChild(opt);
-    //   }
-    // };
+
     todoForm.innerHTML = `
-        <label for="title">Title:</label><br>
-        <input type="text" id="title" name="title" required><br>
-        <label for="description">Description:</label><br>
-        <input type="text" id="description" name="description" required><br>
-        <label for="duedate">Due Date:</label><br>
-        <input type="date" id="duedate" name="duedate" required><br>
-        <label for="priority">Priority:</label><br>
-        <select name="priority" id="priority">
+        <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" class="form-control" required><br>
+        </div>
+        <div class="form-group"> 
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" class="form-control" required><br>
+        </div>
+        <div class="form-group">
+        <label for="duedate">Due Date:</label>
+        <input type="date" id="duedate" name="duedate" class="form-control" required><br>
+        </div>
+        <div class="form-group">
+        <label for="priority">Priority:</label>
+        <select name="priority" id="priority" class="form-control">
           <option value="high">High</option>
           <option value="medium">Medium</option>
           <option value="low">Low</option>
         </select><br>
-        <label for="project">Project:</label><br>
+        </div>
+        <label for="project">Project:</label>
     `;
     const select = document.createElement('select');
     select.setAttribute('id', 'project');
     select.setAttribute('name', 'project');
+    select.setAttribute('class', 'form-control');
     for (let i = 0; i < Projects.length; i++) {
       const option = document.createElement('option');
       option.value = Projects[i].title;
@@ -41,9 +43,10 @@ const addToDoForm = (() => {
     todoForm.appendChild(select);
     const br = document.createElement('br');
     todoForm.appendChild(br);
-    const submitBtn = document.createElement('INPUT')
+    const submitBtn = document.createElement('INPUT');
     submitBtn.setAttribute('id', 'submit');
     submitBtn.setAttribute('type', 'submit');
+    submitBtn.classList.add('btn','btn-primary');
     todoForm.appendChild(submitBtn);
     todoContainer.appendChild(todoForm);
     return todoForm;
@@ -54,12 +57,7 @@ const addToDoForm = (() => {
     document.getElementById('todo-form').style.display = 'none';
   });
 
-  const test = ((e) => {
-    e.preventDefault();
-    console.log("Hello");
-  })
-
-  return { hideForm, todoForm, test };
+  return { hideForm, todoForm };
 })();
 
 export default addToDoForm;
