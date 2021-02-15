@@ -1,5 +1,5 @@
 import './style.css';
-import './properties.js';
+import TodoItem from './properties.js';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProjectForm from './newProject';
@@ -47,13 +47,18 @@ viewProjectBtn.addEventListener('click', () => {
 
 
 todobtn.addEventListener('click', () => {
-  addToDoForm.todoForm();
-  const btn = document.getElementById('submit');
-  btn.onsubmit = function() {
-    console.log("hello WOrld");
-    addToDoForm.test();
-  };
-  // btn.addEventListener('submit', () =>{
-  //  console.log('Hello');
-  // })
-}); 
+  const form = addToDoForm.todoForm();
+  createListObject(form);
+});
+
+const createListObject = (form) => {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const title = document.getElementById('title').value;
+    const description = document.getElementById('description').value;
+    const duedate = document.getElementById('duedate').value;
+    const priority = document.getElementById('priority').value;
+    const list = new TodoItem(title, description, duedate, priority);
+    console.log(list);
+  });
+};

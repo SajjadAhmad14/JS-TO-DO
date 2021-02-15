@@ -20,6 +20,7 @@ const addToDoForm = (() => {
         <input type="submit" value="Add" id = 'submit' onsubmit='test(); return false;'></input>
     `;
     todoContainer.appendChild(todoForm);
+    return todoForm;
   });
 
   const hideForm = (() => {
