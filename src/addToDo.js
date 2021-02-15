@@ -5,6 +5,16 @@ const addToDoForm = (() => {
   const todoForm = (()=> {
     const todoContainer = document.getElementById('todo-form');
     const todoForm = document.createElement('form');
+    const optionValue = function () {
+      let select = document.getElementById('project');
+      console.log(select);
+      // for(let i=0; i<Projects.length; i++) {
+      //   const opt = document.createElement('option');
+      //   opt.textContent = Projects[i].title;
+      //   opt.value = Projects[i].title;
+      //   select.appendChild(opt);
+      // }
+    };
     todoForm.innerHTML = `
         <label for="title">Title:</label><br>
         <input type="text" id="title" name="title" required><br>
@@ -18,17 +28,16 @@ const addToDoForm = (() => {
           <option value="medium">Medium</option>
           <option value="low">Low</option>
         </select><br>
-        <!--<label for="projects">Projects</label><br>
-        <select name="projects" id="projects">
-        -->
-        for (let i = 0; i < Projects.length; i++) {
-          <option value= Projects[i].title>Projects[i].title</option>
-        }
-        <!--</select><br>-->
+        <label for="project">Project:</label><br>
+        <select name="project" id="project">
+          ${optionValue()}
+        </select><br>
         <input type="submit" value="Add" id = 'submit' onsubmit='test(); return false;'></input>
     `;
+
     todoContainer.appendChild(todoForm);
     return todoForm;
+
   });
 
   const hideForm = (() => {
