@@ -17,7 +17,7 @@ const addToDoForm = (() => {
           <option value="medium">Medium</option>
           <option value="low">Low</option>
         </select><br>
-        <input type="submit" value="Add" id = 'submit'></input>
+        <input type="submit" value="Add" id = 'submit' onsubmit='test(); return false;'></input>
     `;
     todoContainer.appendChild(todoForm);
   });
@@ -26,7 +26,12 @@ const addToDoForm = (() => {
     document.getElementById('todo-form').style.display = 'none';
   });
 
-  return { hideForm, todoForm };
+  const test = ((e) => {
+    e.preventDefault();
+    console.log("Hello");
+  })
+
+  return { hideForm, todoForm, test };
 })();
 
 export default addToDoForm;

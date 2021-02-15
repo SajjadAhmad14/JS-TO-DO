@@ -45,11 +45,15 @@ viewProjectBtn.addEventListener('click', () => {
   // ProjectForm.viewAllProject();
 });
 
+
 todobtn.addEventListener('click', () => {
   addToDoForm.todoForm();
   const btn = document.getElementById('submit');
-  btn.addEventListener('submit', (e) => {
-    e.preventDefault();
-   console.log('hello');
-  });
-});
+  btn.onsubmit = function() {
+    console.log("hello WOrld");
+    addToDoForm.test();
+  };
+  // btn.addEventListener('submit', () =>{
+  //  console.log('Hello');
+  // })
+}); 
