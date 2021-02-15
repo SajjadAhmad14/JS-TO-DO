@@ -1,20 +1,19 @@
 import TodoItem from './properties'
 import Projects from './project';
+import Project from './addProject';
 const addToDoForm = (() => {
 
   const todoForm = (()=> {
     const todoContainer = document.getElementById('todo-form');
     const todoForm = document.createElement('form');
-    const optionValue = function () {
-      let select = document.getElementById('project');
-      console.log(select);
-      // for(let i=0; i<Projects.length; i++) {
-      //   const opt = document.createElement('option');
-      //   opt.textContent = Projects[i].title;
-      //   opt.value = Projects[i].title;
-      //   select.appendChild(opt);
-      // }
-    };
+    // const optionValue = function (project) {
+    //   for(let i=0; i<Projects.length; i++) {
+    //     const opt = document.createElement('option');
+    //     opt.textContent = Projects[i].title;
+    //     opt.value = Projects[i].title;
+    //     project.appendChild(opt);
+    //   }
+    // };
     todoForm.innerHTML = `
         <label for="title">Title:</label><br>
         <input type="text" id="title" name="title" required><br>
@@ -29,12 +28,23 @@ const addToDoForm = (() => {
           <option value="low">Low</option>
         </select><br>
         <label for="project">Project:</label><br>
-        <select name="project" id="project">
-          ${optionValue()}
-        </select><br>
-        <input type="submit" value="Add" id = 'submit' onsubmit='test(); return false;'></input>
     `;
-
+    const select = document.createElement('select');
+    select.setAttribute('id', 'project');
+    select.setAttribute('name', 'project');
+    for (let i = 0; i < Projects.length; i++) {
+      const option = document.createElement('option');
+      option.value = Projects[i].title;
+      option.textContent = Projects[i].title;
+      select.appendChild(option);
+    }
+    todoForm.appendChild(select);
+    const br = document.createElement('br');
+    todoForm.appendChild(br);
+    const submitBtn = document.createElement('INPUT')
+    submitBtn.setAttribute('id', 'submit');
+    submitBtn.setAttribute('type', 'submit');
+    todoForm.appendChild(submitBtn);
     todoContainer.appendChild(todoForm);
     return todoForm;
 
