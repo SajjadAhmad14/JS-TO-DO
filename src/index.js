@@ -9,8 +9,6 @@ import Projects from './project.js';
 
 window.addEventListener('DOMContentLoaded', ProjectForm.hideForm);
 
-// let projects = [];
-
 //selectors
 const addSign = document.querySelector('#add-project');
 const form = document.getElementById('form');
@@ -37,6 +35,7 @@ form.addEventListener('submit', (e) => {
       document.getElementById('form').reset();
       clearContent();
       ProjectForm.viewAllProject();
+      // ProjectForm.hideForm();
 });
 
 viewProjectBtn.addEventListener('click', () => {
