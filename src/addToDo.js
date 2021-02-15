@@ -1,4 +1,5 @@
 import TodoItem from './properties'
+import Projects from './project';
 const addToDoForm = (() => {
 
   const todoForm = (()=> {
@@ -17,6 +18,13 @@ const addToDoForm = (() => {
           <option value="medium">Medium</option>
           <option value="low">Low</option>
         </select><br>
+        <!--<label for="projects">Projects</label><br>
+        <select name="projects" id="projects">
+        -->
+        for (let i = 0; i < Projects.length; i++) {
+          <option value= Projects[i].title>Projects[i].title</option>
+        }
+        <!--</select><br>-->
         <input type="submit" value="Add" id = 'submit' onsubmit='test(); return false;'></input>
     `;
     todoContainer.appendChild(todoForm);

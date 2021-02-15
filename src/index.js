@@ -1,13 +1,13 @@
 import './style.css';
-import TodoItem from './properties.js';
+import TodoItem from './properties';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProjectForm from './newProject';
 import './addProject';
 import Project from './addProject';
-import Projects from './project.js';
-import addToDoForm from './addToDo.js'
-
+import Projects from './project';
+import addToDoForm from './addToDo';
+import items from './toDoItems';
 window.addEventListener('DOMContentLoaded', ProjectForm.hideForm);
 
 //selectors
@@ -58,11 +58,9 @@ const createListObject = (form) => {
     const description = document.getElementById('description').value;
     const duedate = document.getElementById('duedate').value;
     const priority = document.getElementById('priority').value;
-    const list = new TodoItem(title, description, duedate, priority); 
-    console.log(list); // 
-    // Creating new object of TodoItem class and 
-    //Adding new todo in the array let's say it ToDOArray
-
+    const item = new TodoItem(title, description, duedate, priority);
+    items.push(item);
+    form.reset();
     //1. check the project value selected in the form.
     //2. we have to add the todo item in the respective project array
   });
