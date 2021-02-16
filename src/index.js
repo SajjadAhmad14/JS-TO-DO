@@ -67,10 +67,12 @@ const createListObject = (form) => {
     const project = document.getElementById('project').value;
     const item = new TodoItem(title, description, duedate, priority,project);
     items.push(item);
+    console.log(item);
     addToDoForm.itemProject(item);
     form.reset();
+    addToDoForm.addList();
   });
 };
 
-addToDoForm.addList();
-addToDoForm.itemDetails();
+// addToDoForm.addList();
+// addToDoForm.itemDetails();

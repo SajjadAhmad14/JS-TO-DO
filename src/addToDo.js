@@ -1,6 +1,7 @@
 import TodoItem from './properties'
 import Projects from './project';
 import Project from './addProject';
+import items from './toDoItems.js';
 
 
 const addToDoForm = (() => {
@@ -75,10 +76,42 @@ const addToDoForm = (() => {
   }
 
   const addList = () => {
-    const toDoContainer = document.getElementsByClassName('todo-container')[0];
-    const div = document.createElement('div');
-    div.setAttribute('id', 'list');
-    toDoContainer.appendChild(div);
+    const todoitemDiv = document.getElementById('todo-items');
+    if(items.length === 1) {
+      const table = document.createElement('table');
+    const tr = document.createElement('tr');
+    const th1 = document.createElement('th');
+    th1.textContent = 'Title';
+    const th2 = document.createElement('th');
+    th2.textContent = 'Description';
+    const th3 = document.createElement('th');
+    th3.textContent = 'Due Date';
+    const th4 = document.createElement('th');
+    th4.textContent = 'Priority';
+    const th5 = document.createElement('th');
+    th5.textContent = 'Project';
+
+    table.appendChild(th1);
+    table.appendChild(th2);
+    table.appendChild(th3);
+    table.appendChild(th4);
+    table.appendChild(th5);
+
+    todoitemDiv.appendChild(table);
+    }
+    
+    const row = document.createElement('tr');
+    for(let i=0; i<items.length; i++) {
+      row.innerHTML = `
+      <td class="mx-4">${items[i].title}</td>
+      <td class="mx-4">${items[i].description}</td>
+      <td class="mx-4">${items[i].dueDate}</td>
+      <td class="mx-4">${items[i].priority}</td>
+      <td class="mx-4">${items[i].project}</td>
+      `;
+    }
+    todoitemDiv.appendChild(row);
+
   };
 
 
