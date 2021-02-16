@@ -18,6 +18,10 @@ const form = document.getElementById('form');
 const viewProjectBtn = document.getElementById('view-project');
 // const todoForm = document.getElementById('todo-form');
 const todobtn = document.getElementById('add-todo');
+const todoSubBtn = document.getElementById('submit');
+
+
+
 //functions
 const clearContent = () => {
   const content = document.getElementById("project-content");
@@ -60,10 +64,10 @@ const createListObject = (form) => {
     const description = document.getElementById('description').value;
     const duedate = document.getElementById('duedate').value;
     const priority = document.getElementById('priority').value;
-    const item = new TodoItem(title, description, duedate, priority);
+    const project = document.getElementById('project').value;
+    const item = new TodoItem(title, description, duedate, priority,project);
     items.push(item);
+    addToDoForm.itemProject(item);
     form.reset();
-    //1. check the project value selected in the form.
-    //2. we have to add the todo item in the respective project array
   });
 };

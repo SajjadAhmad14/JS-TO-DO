@@ -1,12 +1,17 @@
+import items from "./toDoItems";
+
 const Projects = [
   {
-    'title': 'Work'
+    'title': 'Work',
+    'items':[]
   },
   {
-    'title': 'Home'
+    'title': 'Home',
+    'items': []
   },
   {
-    'title': 'Gym'
+    'title': 'Gym',
+    'items': []
   }
 ];
 

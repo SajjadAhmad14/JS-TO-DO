@@ -1,6 +1,8 @@
 import TodoItem from './properties'
 import Projects from './project';
 import Project from './addProject';
+
+
 const addToDoForm = (() => {
 
   const todoForm = (()=> {
@@ -53,11 +55,22 @@ const addToDoForm = (() => {
 
   });
 
+  const itemProject = ((item) => {
+    const project = item.project;
+    for(let i=0; i<Projects.length; i++) {
+      if(Projects[i].title === project) {
+        Projects[i].items.push(item);
+      }
+    }
+  });
+
   const hideForm = (() => {
     document.getElementById('todo-form').style.display = 'none';
   });
 
-  return { hideForm, todoForm };
+
+
+  return { hideForm, todoForm, itemProject };
 })();
 
 export default addToDoForm;
