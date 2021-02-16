@@ -68,9 +68,21 @@ const addToDoForm = (() => {
     document.getElementById('todo-form').style.display = 'none';
   });
 
+  const itemDetails = () => {
+    for(let i = 0; i < Projects.length; i++) {
+      console.log(Projects[i].items);
+    }
+  }
+
+  const addList = () => {
+    const toDoContainer = document.getElementsByClassName('todo-container')[0];
+    const div = document.createElement('div');
+    div.setAttribute('id', 'list');
+    toDoContainer.appendChild(div);
+  };
 
 
-  return { hideForm, todoForm, itemProject };
+  return { hideForm, todoForm, itemProject, addList, itemDetails};
 })();
 
 export default addToDoForm;

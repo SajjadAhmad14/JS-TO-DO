@@ -71,3 +71,6 @@ const createListObject = (form) => {
     form.reset();
   });
 };
+
+addToDoForm.addList();
+addToDoForm.itemDetails();
