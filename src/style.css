@@ -100,3 +100,21 @@ label {
   width: 30%;
   margin: 0 auto;
 }
+
+.todo-items {
+  border: 1px solid rgb(206, 194, 194);
+  width: 50%;
+  margin: 0 auto;
+  
+}
+
+.todo-table {
+  border: 1px solid black;
+  justify-content: space-between;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.todo-row {
+  width: 100%;
+}

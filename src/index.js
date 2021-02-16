@@ -16,10 +16,8 @@ window.addEventListener('DOMContentLoaded', ProjectForm.hideForm);
 const addSign = document.querySelector('#add-project');
 const form = document.getElementById('form');
 const viewProjectBtn = document.getElementById('view-project');
-// const todoForm = document.getElementById('todo-form');
 const todobtn = document.getElementById('add-todo');
-const todoSubBtn = document.getElementById('submit');
-
+const todoform = document.getElementById('todo-form');
 
 
 //functions
@@ -43,7 +41,6 @@ form.addEventListener('submit', (e) => {
       document.getElementById('form').reset();
       clearContent();
       ProjectForm.viewAllProject();
-      // ProjectForm.hideForm();
 });
 
 viewProjectBtn.addEventListener('click', () => {
@@ -55,6 +52,7 @@ viewProjectBtn.addEventListener('click', () => {
 todobtn.addEventListener('click', () => {
   const form = addToDoForm.todoForm();
   createListObject(form);
+  
 });
 
 const createListObject = (form) => {
@@ -67,12 +65,10 @@ const createListObject = (form) => {
     const project = document.getElementById('project').value;
     const item = new TodoItem(title, description, duedate, priority,project);
     items.push(item);
-    console.log(item);
     addToDoForm.itemProject(item);
-    form.reset();
     addToDoForm.addList();
+    form.reset();
   });
+
 };
 
-// addToDoForm.addList();
-// addToDoForm.itemDetails();

@@ -69,39 +69,38 @@ const addToDoForm = (() => {
     document.getElementById('todo-form').style.display = 'none';
   });
 
-  const itemDetails = () => {
-    for(let i = 0; i < Projects.length; i++) {
-      console.log(Projects[i].items);
-    }
-  }
-
   const addList = () => {
     const todoitemDiv = document.getElementById('todo-items');
     if(items.length === 1) {
       const table = document.createElement('table');
-    const tr = document.createElement('tr');
-    const th1 = document.createElement('th');
-    th1.textContent = 'Title';
-    const th2 = document.createElement('th');
-    th2.textContent = 'Description';
-    const th3 = document.createElement('th');
-    th3.textContent = 'Due Date';
-    const th4 = document.createElement('th');
-    th4.textContent = 'Priority';
-    const th5 = document.createElement('th');
-    th5.textContent = 'Project';
+      table.setAttribute('class', 'table');
+      const thead = document.createElement('thead')
+      const tr = document.createElement('tr');
+      tr.setAttribute('class','todo-row');
+      const th1 = document.createElement('th');
+      th1.textContent = 'Title';
+      const th2 = document.createElement('th');
+      th2.textContent = 'Description';
+      const th3 = document.createElement('th');
+      th3.textContent = 'Due Date';
+      const th4 = document.createElement('th');
+      th4.textContent = 'Priority';
+      const th5 = document.createElement('th');
+      th5.textContent = 'Project';
 
-    table.appendChild(th1);
-    table.appendChild(th2);
-    table.appendChild(th3);
-    table.appendChild(th4);
-    table.appendChild(th5);
-
-    todoitemDiv.appendChild(table);
+      tr.appendChild(th1);
+      tr.appendChild(th2);
+      tr.appendChild(th3);
+      tr.appendChild(th4);
+      tr.appendChild(th5);
+      thead.appendChild(tr);
+      table.appendChild(thead);
+      todoitemDiv.appendChild(table);
     }
-    
+    const tbody = document.createElement('tbody');
     const row = document.createElement('tr');
     for(let i=0; i<items.length; i++) {
+      
       row.innerHTML = `
       <td class="mx-4">${items[i].title}</td>
       <td class="mx-4">${items[i].description}</td>
@@ -109,13 +108,15 @@ const addToDoForm = (() => {
       <td class="mx-4">${items[i].priority}</td>
       <td class="mx-4">${items[i].project}</td>
       `;
+      tbody.appendChild(row);
     }
-    todoitemDiv.appendChild(row);
+    
+    todoitemDiv.appendChild(tbody);
 
   };
 
 
-  return { hideForm, todoForm, itemProject, addList, itemDetails};
+  return { hideForm, todoForm, itemProject, addList};
 })();
 
 export default addToDoForm;
