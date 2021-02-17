@@ -86,4 +86,3 @@ const createListObject = (form) => {
 const hideTodoForm = (form) => {
     form.style.display = 'none';
 };
-
