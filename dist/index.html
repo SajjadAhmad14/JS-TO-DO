@@ -44,13 +44,17 @@
       </div>
       <div>
         <form id='form'>
-          <div class="form-group">
+          <div class="form-group my-4">
             <input type="text" class="form-control w-50 m-auto" id="project-title" required=true
               placeholder="Enter project title!">
           </div>
-          <button type="submit" id="submit-form" name="submit" class="btn btn-primary">Submit</button>
+          <div class="d-flex my-4">
+            <button type="submit" id="submit-form" name="submit" class="btn btn-primary">Submit</button>
+          </div>
+          
         </form>
       </div>
+      <div class="all-project my-4" id="all-projects"></div>
     </div>
     <div class="todo-container" id="todo-container">
       <h3 class="todo-heading">Add To Do</h3>

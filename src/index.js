@@ -33,19 +33,24 @@ addSign.addEventListener('click', () => {
   ProjectForm.showForm();
 });
 
+const clearProjectList = () => {
+  // const container = document.getElementById('all-projects');
+  document.querySelectorAll('.project-list').forEach(project => project.remove());
+};
+
 form.addEventListener('submit', (e) => {
       e.preventDefault();
       const title = document.getElementById('project-title').value;
       const project = new Project(title);
-      Projects.push(project); 
+      Projects.push(project);
       document.getElementById('form').reset();
-      clearContent();
+      clearProjectList();
       ProjectForm.viewAllProject();
 });
 
 viewProjectBtn.addEventListener('click', () => {
-  // clearContent();
-  // ProjectForm.viewAllProject();
+  clearContent();
+  ProjectForm.viewAllProject();
 });
 
 

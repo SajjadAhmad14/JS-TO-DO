@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+main {
+  height: 100vh;
+}
 
 @font-face {
   font-family: 'MyFont';
@@ -102,7 +105,6 @@ label {
 }
 
 .todo-items {
-  border: 1px solid rgb(206, 194, 194);
   width: 50%;
   margin: 0 auto;
   
@@ -117,4 +119,15 @@ label {
 
 .todo-row {
   width: 100%;
+}
+
+.all-project {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+#submit-form {
+  
 }

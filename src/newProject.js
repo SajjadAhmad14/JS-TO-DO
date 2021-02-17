@@ -13,16 +13,19 @@ const ProjectForm = (() => {
 
   const viewAllProject = (() => {
     const projectContainer = document.querySelector('.project-container');
-    const projectList = document.createElement('div');
+    const projectList = document.getElementById('all-projects');
+    
     for(let i=0; i<Projects.length; i++) {
       const h2 = document.createElement('h2');
+      h2.classList.add('project-list');
       h2.textContent = Projects[i].title;
       projectList.appendChild(h2);
     }
-    projectContainer.appendChild(projectList);
+
   });
 
     return { showForm, hideForm, viewAllProject };
+
 })();
 
 
