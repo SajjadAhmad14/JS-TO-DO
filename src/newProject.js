@@ -1,6 +1,5 @@
 import Projects from './project.js';
-import clearContent from './index.js'
-import { LoaderTargetPlugin } from 'webpack';
+import clearContent from './index.js';
 
 const ProjectForm = (() => {
 
