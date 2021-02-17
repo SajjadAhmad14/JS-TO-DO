@@ -55,14 +55,16 @@ viewProjectBtn.addEventListener('click', () => {
 
 
 todobtn.addEventListener('click', () => {
+  // const formdiv = document.getElementById('todo-form');
+  // formdiv.style.display = 'block';
   const form = addToDoForm.todoForm();
   createListObject(form);
-  
 });
 
 const createListObject = (form) => {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
+    const todobtn = document.getElementById('submit');
     const title = document.getElementById('title').value;
     const description = document.getElementById('description').value;
     const duedate = document.getElementById('duedate').value;
@@ -72,8 +74,16 @@ const createListObject = (form) => {
     items.push(item);
     addToDoForm.itemProject(item);
     addToDoForm.addList();
+    // const formdiv = document.getElementById('todo-form');
+    // console.log(formdiv);
+    // formdiv.style.display = 'none';
     form.reset();
+    // hideTodoForm(form);
   });
+  
+};
 
+const hideTodoForm = (form) => {
+    form.style.display = 'none';
 };
 
