@@ -59,7 +59,7 @@ const ProjectForm = (() => {
       td3.appendChild(editBtn);
       const td4 = document.createElement('td');
       const dltBtn = document.createElement('button');
-      dltBtn.innerHTML = `<i class="fa fa-trash" aria-hidden="true"></i>`;
+      dltBtn.textContent = 'X';
       dltBtn.classList.add('btn','btn-danger');
       dltBtn.setAttribute('type','button');
       td4.appendChild(dltBtn);
@@ -69,9 +69,22 @@ const ProjectForm = (() => {
       row.appendChild(td3);
       row.appendChild(td4);
       tbleBody.appendChild(row);
-      
+
     }
+
+    const todoContainer = document.getElementById('todo-table');
+    todoContainer.addEventListener('click', deleteTodo);
+
   });
+
+  const deleteTodo = ((e) => {
+    let ele = e.target;
+    console.log(ele);
+    console.log(ele.parentElement.parentElement.parentElement);
+    if(ele.classList.contains('btn-danger')) {
+      ele.parentElement.parentElement.parentElement.remove();
+    }
+  })
   
   const showTasks = (item, h2) => {
     const listContainer = document.createElement('div');
