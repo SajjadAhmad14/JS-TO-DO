@@ -82,13 +82,10 @@ const ProjectForm = (() => {
 
   const deleteTodo = ((e) => {
     let ele = e.target;
-    console.log(ele.parentElement.parentElement.firstChild.textContent);
-    console.log(ele.parentElement.parentElement.parentElement);
     if(ele.classList.contains('btn-danger')) {
-      ele.parentElement.parentElement.parentElement.remove();
-      // console.log(ele.parentElement.parentElement.parentElement);
+      ele.parentElement.parentElement.remove();
       let index = ele.parentElement.parentElement.firstChild.textContent;
-      projectItemsArray = projectItemsArray.splice(index-1, 1);
+      // projectItemsArray = projectItemsArray.splice(index-1, 1);
     }
   })
   
