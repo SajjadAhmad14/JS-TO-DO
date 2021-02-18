@@ -51,9 +51,25 @@ const ProjectForm = (() => {
       td1.textContent = projectItemsArray[i].title
       const td2 = document.createElement('td');
       td2.textContent = projectItemsArray[i].dueDate
+      const td3 = document.createElement('td');
+      const editBtn = document.createElement('button');
+      editBtn.innerHTML =`<i class="fa fa-pencil-square-o" aria-hidden="true"></i>`;
+      editBtn.classList.add('btn', 'btn-success');
+      editBtn.setAttribute('type','button');
+      td3.appendChild(editBtn);
+      const td4 = document.createElement('td');
+      const dltBtn = document.createElement('button');
+      dltBtn.innerHTML = `<i class="fa fa-trash" aria-hidden="true"></i>`;
+      dltBtn.classList.add('btn','btn-danger');
+      dltBtn.setAttribute('type','button');
+      td4.appendChild(dltBtn);
+
       row.appendChild(td1);
       row.appendChild(td2);
+      row.appendChild(td3);
+      row.appendChild(td4);
       tbleBody.appendChild(row);
+      
     }
   });
   
