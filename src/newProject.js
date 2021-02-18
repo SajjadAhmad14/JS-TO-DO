@@ -23,27 +23,66 @@ const ProjectForm = (() => {
       h2.appendChild(anchor);
       projectList.appendChild(h2);
     }
-    // const items = document.getElementsByClassName('project-list');
-    // for (let i = 0; i < items.length; i++) {
-    //   items[i].addEventListener('click', () => {
-    //     console.log()
-    //   })
-    // }
-    // h2.addEventListener('click', () => {
-    //   showTasks(Projects[i].items, h2);
-    // // });
-    // })
+   
     const al = document.querySelector('#all-projects');
-    al.addEventListener('click', projectTodo)
+    al.addEventListener('click', projectTodo);
+    clearProjectList('#all-projects');
   });
 
   const projectTodo = ((e) => {
-    let x = e.target;
-    // let test = x.textContent;
-    // for(let i=0; i<Projects.length; i++) {
-    //   if()
+    
+    let x = e.target.textContent;
+    let test = x.textContent;
+    for(let i=0; i<Projects.length; i++) {
+      if(Projects[i].title === e.target.textContent) {
+        console.log(Projects[i].items);
+        projectItemsTable(Projects[i].items);
+      }
+    }
+  });
+
+  const projectItemsTable = ((projectItemsArray) => {
+
+    const container = document.getElementById('projetc-items');
+    
+    if(projectItemsArray.length === 1) {
+      const table = document.createElement('table');
+      const thead = document.createElement('thead');
+      const tr = document.createElement('tr');
+      const th1 = document.createElement('th');
+      th1.setAttribute('scope', 'col');
+      th1.textContent = '#';
+      const th2 = document.createElement('th');
+      th2.setAttribute('scope', 'col');
+      th2.textContent = 'Title';
+      const th3 = document.createElement('th');
+      th3.setAttribute('scope', 'col');
+      th3.textContent ='Due Date';
+
+      tr.appendChild(th1);
+      tr.appendChild(th2);
+      tr.appendChild(th3);
+      thead.appendChild(tr);
+      table.appendChild(thead);
+      container.appendChild(table);
+    }
+    // else if(projectItemsArray.length === 0) {
+    //   alert('No items!')
     // }
-    console.log(e.target);
+
+    const tbody = document.createElement('tbody');
+    const row = document.createElement('tr');
+
+    for(let i=0; i<projectItemsArray.length; i++) {
+      row.innerHTML = `
+      <td class="mx-4">${i+1}</td>
+      <td class="mx-4">${projectItemsArray[i].title}</td>
+      <td class="mx-4">${projectItemsArray[i].dueDate}</td>
+      `;
+      
+    }
+    tbody.appendChild(row); 
+    container.appendChild(tbody);
   });
 
   const showTasks = (item, h2) => {

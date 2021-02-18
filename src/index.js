@@ -33,9 +33,9 @@ addSign.addEventListener('click', () => {
   ProjectForm.showForm();
 });
 
-const clearProjectList = () => {
+const clearProjectList = (container) => {
   // const container = document.getElementById('all-projects');
-  document.querySelectorAll('.project-list').forEach(project => project.remove());
+  document.querySelectorAll(container).forEach(project => project.remove());
 };
 
 form.addEventListener('submit', (e) => {
@@ -44,7 +44,7 @@ form.addEventListener('submit', (e) => {
       const project = new Project(title);
       Projects.push(project);
       document.getElementById('form').reset();
-      clearProjectList();
+      clearProjectList('.project-list');
       ProjectForm.viewAllProject();
 });
 
