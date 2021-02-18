@@ -22,7 +22,6 @@ const todoform = document.getElementById('todo-form');
 
 //functions
 const clearContent = () => {
-  const content = document.getElementById("project-content");
   document.querySelectorAll('.card-1').forEach(card => card.remove());
 };
 

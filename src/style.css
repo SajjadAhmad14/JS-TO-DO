@@ -127,3 +127,13 @@ label {
   text-align: center;
   padding: 20px;
 }
+
+.project-list a {
+  color: #000;
+  text-decoration: none;
+}
+
+.project-list a:hover {
+  text-decoration: underline;
+  color: #0000ff;
+}
