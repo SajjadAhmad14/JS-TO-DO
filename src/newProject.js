@@ -47,6 +47,8 @@ const ProjectForm = (() => {
     for (let i = 0; i < projectItemsArray.length; i++) {
       const row = document.createElement('tr');
       row.setAttribute('class', 'table-row');
+      const td0 = document.createElement('td');
+      td0.textContent = i+1;
       const td1 = document.createElement('td');
       td1.textContent = projectItemsArray[i].title
       const td2 = document.createElement('td');
@@ -64,6 +66,7 @@ const ProjectForm = (() => {
       dltBtn.setAttribute('type','button');
       td4.appendChild(dltBtn);
 
+      row.appendChild(td0);
       row.appendChild(td1);
       row.appendChild(td2);
       row.appendChild(td3);
@@ -79,10 +82,13 @@ const ProjectForm = (() => {
 
   const deleteTodo = ((e) => {
     let ele = e.target;
-    console.log(ele);
+    console.log(ele.parentElement.parentElement.firstChild.textContent);
     console.log(ele.parentElement.parentElement.parentElement);
     if(ele.classList.contains('btn-danger')) {
       ele.parentElement.parentElement.parentElement.remove();
+      // console.log(ele.parentElement.parentElement.parentElement);
+      let index = ele.parentElement.parentElement.firstChild.textContent;
+      projectItemsArray = projectItemsArray.splice(index-1, 1);
     }
   })
   
