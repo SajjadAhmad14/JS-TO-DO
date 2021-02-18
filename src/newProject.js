@@ -48,22 +48,22 @@ const ProjectForm = (() => {
       const row = document.createElement('tr');
       row.setAttribute('class', 'table-row');
       const td0 = document.createElement('td');
-      td0.textContent = i+1;
+      td0.textContent = i + 1;
       const td1 = document.createElement('td');
       td1.textContent = projectItemsArray[i].title
       const td2 = document.createElement('td');
       td2.textContent = projectItemsArray[i].dueDate
       const td3 = document.createElement('td');
       const editBtn = document.createElement('button');
-      editBtn.innerHTML =`<i class="fa fa-pencil-square-o" aria-hidden="true"></i>`;
+      editBtn.innerHTML = `<i class="fa fa-pencil-square-o" aria-hidden="true"></i>`;
       editBtn.classList.add('btn', 'btn-success');
-      editBtn.setAttribute('type','button');
+      editBtn.setAttribute('type', 'button');
       td3.appendChild(editBtn);
       const td4 = document.createElement('td');
       const dltBtn = document.createElement('button');
       dltBtn.textContent = 'X';
-      dltBtn.classList.add('btn','btn-danger');
-      dltBtn.setAttribute('type','button');
+      dltBtn.classList.add('btn', 'btn-danger');
+      dltBtn.setAttribute('type', 'button');
       td4.appendChild(dltBtn);
 
       row.appendChild(td0);
@@ -76,19 +76,19 @@ const ProjectForm = (() => {
     }
 
     const todoContainer = document.getElementById('todo-table');
-    todoContainer.addEventListener('click', deleteTodo);
+    todoContainer.addEventListener('click', (e) => {
+      let ele = e.target;
+      if (ele.classList.contains('btn-danger')) {
+        ele.parentElement.parentElement.remove();
+        let index = ele.parentElement.parentElement.firstChild.textContent;
+        for (let i = 0; i < projectItemsArray.length; i++) {
+          projectItemsArray.splice(index-1, 1);
+        }
+      }
+    });
 
   });
 
-  const deleteTodo = ((e) => {
-    let ele = e.target;
-    if(ele.classList.contains('btn-danger')) {
-      ele.parentElement.parentElement.remove();
-      let index = ele.parentElement.parentElement.firstChild.textContent;
-      // projectItemsArray = projectItemsArray.splice(index-1, 1);
-    }
-  })
-  
   const showTasks = (item, h2) => {
     const listContainer = document.createElement('div');
     listContainer.classList.add('todo-list');
