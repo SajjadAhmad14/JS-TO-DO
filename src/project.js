@@ -2,15 +2,15 @@ import items from "./toDoItems";
 
 const Projects = [
   {
-    'title': 'Work',
+    'title': 'WORK',
     'items':[]
   },
   {
-    'title': 'Home',
+    'title': 'HOME',
     'items': []
   },
   {
-    'title': 'Gym',
+    'title': 'GYM',
     'items': []
   }
 ];

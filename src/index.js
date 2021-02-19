@@ -38,15 +38,30 @@ const clearProjectList = (container) => {
 };
 
 form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const title = document.getElementById('project-title').value;
-      const project = new Project(title);
-      Projects.push(project);
-      document.getElementById('form').reset();
-      clearProjectList('.project-list');
-      ProjectForm.viewAllProject();
+  e.preventDefault();
+  const title = document.getElementById('project-title').value.toUpperCase();
+  const project = new Project(title);
+  filterProject(project);
+  document.getElementById('form').reset();
+  clearProjectList('.project-list');
+  ProjectForm.viewAllProject();
 });
 
+const filterProject = (project) => {
+  let find = -1;
+  for (let i = 0; i < Projects.length; i++) {
+    if (project.title == Projects[i].title) {
+      find = 1;
+      break;
+    }
+  }
+  if (find == -1) {
+    Projects.push(project);
+  }
+  else {
+    alert('Project already exists!')
+  }
+};
 viewProjectBtn.addEventListener('click', () => {
   clearContent();
   ProjectForm.viewAllProject();
@@ -69,7 +84,7 @@ const createListObject = (form) => {
     const duedate = document.getElementById('duedate').value;
     const priority = document.getElementById('priority').value;
     const project = document.getElementById('project').value;
-    const item = new TodoItem(title, description, duedate, priority,project);
+    const item = new TodoItem(title, description, duedate, priority, project);
     items.push(item);
     addToDoForm.itemProject(item);
     addToDoForm.addList();
@@ -79,9 +94,9 @@ const createListObject = (form) => {
     form.reset();
     // hideTodoForm(form);
   });
-  
+
 };
 
 const hideTodoForm = (form) => {
-    form.style.display = 'none';
+  form.style.display = 'none';
 };
