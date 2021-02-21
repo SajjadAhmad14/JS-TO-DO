@@ -1,4 +1,4 @@
-# Restaurant Site
+# TO-DO LIST
 
 > This repository contains source of a To-Do List.
  User can add projects.
