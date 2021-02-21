@@ -79,7 +79,9 @@ const ProjectForm = (() => {
 
     }
 
-    const todoContainer = document.getElementById('todo-table');
+  });
+
+  const todoContainer = document.getElementById('todo-table');
     todoContainer.addEventListener('click', (e) => {
       let ele = e.target;
       if (ele.classList.contains('btn-danger')) {
@@ -96,8 +98,6 @@ const ProjectForm = (() => {
         }
       }
     });
-
-  });
 
   const allSiblings = function (elem) {
     let siblings = [];
