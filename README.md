@@ -5,7 +5,7 @@
  User can add tasks to projects.
  User can edit a task or delete it.
 
-![screenshot](./src/images/screenshot.png)
+![screenshot](./src/screenshot.png)
 
 ## Set Up Project Locally
 
