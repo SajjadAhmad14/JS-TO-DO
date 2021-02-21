@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   height: 100%;
 }
@@ -38,7 +39,7 @@ body {
 }
 
 .fas .fa-plus {
- font-size: 30px;
+  font-size: 30px;
 }
 
 .project-heading {
@@ -78,7 +79,6 @@ label {
 .todo-items {
   width: 50%;
   margin: 0 auto;
-  
 }
 
 .todo-table {
@@ -106,5 +106,5 @@ label {
 
 .project-list a:hover {
   text-decoration: underline;
-  color: #0000ff;
+  color: #00f;
 }

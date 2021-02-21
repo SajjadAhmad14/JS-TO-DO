@@ -1,15 +1,10 @@
-import TodoItem from './properties'
 import Projects from './project';
-import Project from './addProject';
-import items from './toDoItems.js';
-
+import items from './toDoItems';
 
 const addToDoForm = (() => {
-
-  const todoForm = (()=> {
+  const todoForm = (() => {
     const todoContainer = document.getElementById('todo-form');
     const todoForm = document.createElement('form');
-
     todoForm.innerHTML = `
         <div class="form-group">
         <label for="title">Title:</label>
@@ -37,7 +32,7 @@ const addToDoForm = (() => {
     select.setAttribute('id', 'project');
     select.setAttribute('name', 'project');
     select.setAttribute('class', 'form-control');
-    for (let i = 0; i < Projects.length; i++) {
+    for (let i = 0; i < Projects.length; i += 1) {
       const option = document.createElement('option');
       option.value = Projects[i].title;
       option.textContent = Projects[i].title;
@@ -49,17 +44,16 @@ const addToDoForm = (() => {
     const submitBtn = document.createElement('INPUT');
     submitBtn.setAttribute('id', 'submit');
     submitBtn.setAttribute('type', 'submit');
-    submitBtn.classList.add('btn','btn-primary');
+    submitBtn.classList.add('btn', 'btn-primary');
     todoForm.appendChild(submitBtn);
     todoContainer.appendChild(todoForm);
     return todoForm;
-
   });
 
   const itemProject = ((item) => {
     const project = item.project;
-    for(let i=0; i<Projects.length; i++) {
-      if(Projects[i].title === project) {
+    for (let i = 0; i < Projects.length; i += 1) {
+      if (Projects[i].title === project) {
         Projects[i].items.push(item);
       }
     }
@@ -71,12 +65,12 @@ const addToDoForm = (() => {
 
   const addList = () => {
     const todoitemDiv = document.getElementById('todo-items');
-    if(items.length === 1) {
+    if (items.length === 1) {
       const table = document.createElement('table');
       table.setAttribute('class', 'table');
-      const thead = document.createElement('thead')
+      const thead = document.createElement('thead');
       const tr = document.createElement('tr');
-      tr.setAttribute('class','todo-row');
+      tr.setAttribute('class', 'todo-row');
       const th1 = document.createElement('th');
       th1.textContent = 'Title';
       const th2 = document.createElement('th');
@@ -99,8 +93,7 @@ const addToDoForm = (() => {
     }
     const tbody = document.createElement('tbody');
     const row = document.createElement('tr');
-    for(let i=0; i<items.length; i++) {
-      
+    for (let i = 0; i < items.length; i += 1) {
       row.innerHTML = `
       <td class="mx-4">${items[i].title}</td>
       <td class="mx-4">${items[i].description}</td>
@@ -110,14 +103,10 @@ const addToDoForm = (() => {
       `;
       tbody.appendChild(row);
     }
-    
     todoitemDiv.appendChild(tbody);
-
   };
-
-
-  return { hideForm, todoForm, itemProject, addList};
+  return { 
+    hideForm, todoForm, itemProject, addList,
+  };
 })();
-
 export default addToDoForm;
-
