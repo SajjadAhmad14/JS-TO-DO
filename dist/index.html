@@ -9,68 +9,42 @@
 </head>
 
 <body>
-  <main id="main-container">
-    <div class="heading-container">
-      <h1>To Do</h1>
-    </div>
-    <div class="project-container">
-      <h2 class="project-heading">Projects</i></h2>
-      <div class="d-flex project-cards" id="project-content">
-        <div class="card-1 bg-yellow" id="p-card">
-          <div class="container">
-            <h4>Work</h4>
-          </div>
-        </div>
-        <div class="card-1 bg-beige" id="card2">
-          <div class="container">
-            <h4>Home</h4>
-          </div>
-        </div>
-        <div class="card-1 bg-orange">
-          <div class="container">
-            <h4>Gym</h4>
-          </div>
-        </div>
-        <div class="card-1 bg-gray">
-          <div class="container">
-            <h4>Add New <i class="fa fa-plus" aria-hidden="true" id="add-project"></i></h4>
-          </div>
-        </div>
-        <div class="card-1 bg-gray">
-          <div class="container">
-            <h4 id='view-project'>View All <i class="fa fa-arrow-right" aria-hidden="true"></i></h4>
-          </div>
-        </div>
+  <header class="heading-container">
+    <h1>To Do</h1>
+  </header>
+  <main class="project-container">
+    <aside class='side-bar'>
+      <div class='d-flex justify-content-around'>
+        <h2 class="project-heading">Projects<i class="fa fa-plus" aria-hidden="true" id="add-project"></i></h2>
+        <h2 id='view-project'>View All <i class="fa fa-arrow-right" aria-hidden="true"></i></h2>
       </div>
-      <div>
-        <form id='form'>
-          <div class="form-group my-4">
-            <input type="text" class="form-control w-50 m-auto" id="project-title" required=true
-              placeholder="Enter project title!">
-          </div>
-          <div class="d-flex my-4">
-            <button type="submit" id="submit-form" name="submit" class="btn btn-primary">Submit</button>
-          </div>
-          
-        </form>
-      </div>
+      <form id='form'>
+        <div class="form-group my-4">
+          <input type="text" class="form-control w-50 m-auto" id="project-title" required=true
+            placeholder="Enter project title!">
+        </div>
+        <div class="d-flex my-4">
+          <button type="submit" id="submit-form" name="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
       <div class="all-project my-4" id="all-projects">
       </div>
-    <table class="table table-dark table-hover w-50 m-auto mb-4 text-center" id = 'todo-table'>
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Project Name</th>
-          <th scope="col">Title</th>
-          <th scope="col">Due Date</th>
-          <th scope="col" colspan='2'>Actions</th>
-        </tr>
-      </thead>
-      <tbody id = 'table-body'>
+    </aside>
+    <div class='task-area'>
+      <table class="table table-dark table-hover w-50 m-auto mb-4 text-center" id='todo-table'>
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Project Name</th>
+            <th scope="col">Title</th>
+            <th scope="col">Due Date</th>
+            <th scope="col" colspan='2'>Actions</th>
+          </tr>
+        </thead>
+        <tbody id='table-body'>
 
-      </tbody>
-    </table>
-    <div class="todo-container" id="todo-container">
+        </tbody>
+      </table>
       <h3 class="todo-heading">Add To Do</h3>
       <button type="button" class="add-todo-btn" id="add-todo">Add To Do</button>
       <div class="todo-form" id="todo-form">
@@ -80,5 +54,4 @@
   </main>
   <script src='main.js'></script>
 </body>
-
 </html>

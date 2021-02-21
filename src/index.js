@@ -21,31 +21,10 @@ const todoform = document.getElementById('todo-form');
 
 
 //functions
-const clearContent = () => {
-  document.querySelectorAll('.card-1').forEach(card => card.remove());
-};
-
-//event listners
-
-addSign.addEventListener('click', () => {
-  clearContent();
-  ProjectForm.showForm();
-});
 
 const clearProjectList = (container) => {
-  // const container = document.getElementById('all-projects');
   document.querySelectorAll(container).forEach(project => project.remove());
 };
-
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const title = document.getElementById('project-title').value.toUpperCase();
-  const project = new Project(title);
-  filterProject(project);
-  document.getElementById('form').reset();
-  clearProjectList('.project-list');
-  ProjectForm.viewAllProject();
-});
 
 const filterProject = (project) => {
   let find = -1;
@@ -62,15 +41,34 @@ const filterProject = (project) => {
     alert('Project already exists!')
   }
 };
+
+const hideTodoForm = (form) => {
+  form.style.display = 'none';
+};
+
+//event listners
+
+addSign.addEventListener('click', () => {
+  ProjectForm.showForm();
+});
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const title = document.getElementById('project-title').value.toUpperCase();
+  const project = new Project(title);
+  filterProject(project);
+  document.getElementById('form').reset();
+  clearProjectList('.project-list');
+  ProjectForm.viewAllProject();
+});
+
 viewProjectBtn.addEventListener('click', () => {
-  clearContent();
+  clearProjectList('.project-list');
   ProjectForm.viewAllProject();
 });
 
 
 todobtn.addEventListener('click', () => {
-  // const formdiv = document.getElementById('todo-form');
-  // formdiv.style.display = 'block';
   const form = addToDoForm.todoForm();
   createListObject(form);
 });
@@ -88,15 +86,7 @@ const createListObject = (form) => {
     items.push(item);
     addToDoForm.itemProject(item);
     addToDoForm.addList();
-    // const formdiv = document.getElementById('todo-form');
-    // console.log(formdiv);
-    // formdiv.style.display = 'none';
     form.reset();
-    // hideTodoForm(form);
   });
 
-};
-
-const hideTodoForm = (form) => {
-  form.style.display = 'none';
 };
