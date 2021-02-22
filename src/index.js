@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Project from './modules/addProject';
 import ProjectForm from './modules/newProject';
 import Projects from './modules/project';
-import addToDoForm from './addToDo';
+import addToDoForm from './modules/addToDo';
 import items from './modules/toDoItems';
 import Store from './modules/localStorage';
 

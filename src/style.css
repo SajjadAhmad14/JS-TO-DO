@@ -9,14 +9,14 @@ body {
 }
 
 @font-face {
-  font-family: '';
+  font-family: 'Open Sans Condensed', sans-serif;
   src: url('./OpenSansCondensed-Bold.ttf') format('ttf');
   font-weight: 600;
   font-style: normal;
 }
 
 .heading-container {
-  font-family: 'MyFont';
+  font-family: 'Open Sans Condensed', sans-serif;
   background-color: rgb(224, 188, 194);
   padding: 20px;
   text-align: center;
@@ -43,13 +43,13 @@ body {
 }
 
 .project-heading {
-  font-family: 'MyFont';
+  font-family: 'Open Sans Condensed', sans-serif;
   text-align: center;
   font-weight: bold;
 }
 
 .todo-heading {
-  font-family: 'MyFont';
+  font-family: 'Open Sans Condensed', sans-serif;
   text-align: center;
   font-size: 28px;
   font-weight: bold;
