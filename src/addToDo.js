@@ -55,6 +55,7 @@ const addToDoForm = (() => {
     for (let i = 0; i < Projects.length; i += 1) {
       if (Projects[i].title === project) {
         Projects[i].items.push(item);
+        console.log("Items are getting added to projects or not??");
       }
     }
   });

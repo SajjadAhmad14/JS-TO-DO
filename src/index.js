@@ -8,7 +8,7 @@ import Project from './addProject';
 import Projects from './project';
 import addToDoForm from './addToDo';
 import items from './toDoItems';
-
+import Store from './localStorage'
 
 window.addEventListener('DOMContentLoaded', ProjectForm.hideForm);
 
@@ -36,6 +36,7 @@ const filterProject = (project) => {
   }
   if (find == -1) {
     Projects.push(project);
+    Store.addProject(project);
   }
   else {
     alert('Project already exists!')
@@ -85,6 +86,8 @@ const createListObject = (form) => {
     const item = new TodoItem(title, description, duedate, priority, project);
     items.push(item);
     addToDoForm.itemProject(item);
+    Store.addTodo(item);
+    console.log(Store.getTodo());
     addToDoForm.addList();
     form.reset();
   });

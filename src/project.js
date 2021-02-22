@@ -1,18 +1,6 @@
 import items from "./toDoItems";
+import Store from "./localStorage"
 
-const Projects = [
-  {
-    'title': 'WORK',
-    'items':[]
-  },
-  {
-    'title': 'HOME',
-    'items': []
-  },
-  {
-    'title': 'GYM',
-    'items': []
-  }
-];
+const Projects = Store.getProject();
 
 export default Projects;

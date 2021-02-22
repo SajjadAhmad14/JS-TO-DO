@@ -1,5 +1,6 @@
 import Projects from './project.js';
 import clearContent from './index.js';
+import Store from './localStorage.js';
 
 const ProjectForm = (() => {
 
@@ -33,15 +34,18 @@ const ProjectForm = (() => {
       document.querySelectorAll('.table-row').forEach(row => row.remove());
     })();
     let x = e.target.textContent;
-    let test = x.textContent;
+    let alltodos = Store.getTodo();
+    console.log(alltodos);
     for (let i = 0; i < Projects.length; i++) {
+      
       if (Projects[i].title === e.target.textContent) {
-        projectItemsTable(Projects[i].items, Projects[i]);
+        projectItemsTable(Projects[i].alltodos, Projects[i]);
       }
     }
   });
 
   const projectItemsTable = ((projectItemsArray, project) => {
+    console.log("Hello");
     const table = document.getElementById('todo-table');
     const tbleBody = document.getElementById('table-body');
     for (let i = 0; i < projectItemsArray.length; i++) {
