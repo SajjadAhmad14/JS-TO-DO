@@ -87,7 +87,6 @@ const createListObject = (form) => {
     items.push(item);
     addToDoForm.itemProject(item);
     Store.addTodo(item);
-    console.log(Store.getTodo());
     addToDoForm.addList();
     form.reset();
   });

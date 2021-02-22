@@ -35,7 +35,6 @@ const ProjectForm = (() => {
     })();
     let x = e.target.textContent;
     let alltodos = Store.getTodo();
-    console.log(alltodos);
     let projectTodoList = [];
     for(let i=0; i<alltodos.length; i++) {
       if(alltodos[i].project === e.target.textContent) {
@@ -51,7 +50,6 @@ const ProjectForm = (() => {
   });
 
   const projectItemsTable = ((projectItemsArray, project) => {
-    console.log("Hello");
     const table = document.getElementById('todo-table');
     const tbleBody = document.getElementById('table-body');
     for (let i = 0; i < projectItemsArray.length; i++) {
@@ -103,6 +101,7 @@ const ProjectForm = (() => {
         const title = siblings[1].textContent;
         for (let i = 0; i < Projects.length; i++) {
           if (title == Projects[i].title) {
+            Store.removeTodo(title);
             Projects[i].items.splice(index - 1, 1);
           }
         }
