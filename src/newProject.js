@@ -1,7 +1,7 @@
 import Projects from './project';
 import clearContent from './index';
 import Store from './localStorage';
-
+import addToDoForm from './addToDo'
 const ProjectForm = (() => {
 
   const showForm = (() => {
@@ -60,9 +60,13 @@ const ProjectForm = (() => {
       const td1 = document.createElement('td');
       td1.textContent = project.title;
       const td2 = document.createElement('td');
-      td2.textContent = projectItemsArray[i].title
+      td2.textContent = projectItemsArray[i].title;
+      const tddescr = document.createElement('td');
+      tddescr.textContent = projectItemsArray[i].description;
       const td3 = document.createElement('td');
-      td3.textContent = projectItemsArray[i].dueDate
+      td3.textContent = projectItemsArray[i].dueDate;
+      const tdpriority = document.createElement('td');
+      tdpriority.textContent = projectItemsArray[i].priority;
       const td4 = document.createElement('td');
       const editBtn = document.createElement('button');
       editBtn.innerHTML = `<i class="fa fa-pencil-square-o" aria-hidden="true"></i>`;
@@ -80,7 +84,9 @@ const ProjectForm = (() => {
       row.appendChild(td0);
       row.appendChild(td1);
       row.appendChild(td2);
+      row.appendChild(tddescr);
       row.appendChild(td3);
+      row.appendChild(tdpriority);
       row.appendChild(td4);
       row.appendChild(td5);
       tbleBody.appendChild(row);
@@ -91,6 +97,7 @@ const ProjectForm = (() => {
 
   const todoContainer = document.getElementById('todo-table');
     todoContainer.addEventListener('click', (e) => {
+      e.preventDefault();
       let ele = e.target;
       if (ele.classList.contains('btn-danger')) {
         ele.parentElement.parentElement.remove();
@@ -108,12 +115,16 @@ const ProjectForm = (() => {
       else {
         const row = ele.parentElement.parentElement.parentElement;
         const rowElements = row.children;
+        const project = rowElements[1].textContent;
         const title = rowElements[2].textContent;
-        const date = rowElements[3].textContent;
-        editToDoForm(title, date);
+        const description = rowElements[3].textContent;
+        const duedate = rowElements[4].textContent;
+        const priority = rowElements[5].textContent
+        console.log(project,title,description, duedate, priority);
+        editToDoForm(project,title, description, duedate, priority);
       }
     });
-  const editToDoForm = (title, date) => {
+  const editToDoForm = (project,title, description, duedate, priority) => {
     const editForm = document.createElement('form');
     editForm.classList.add('editToDoForm', 'w-50');
     editForm.innerHTML = `
@@ -156,10 +167,31 @@ const ProjectForm = (() => {
     submitBtn.setAttribute('id', 'submit');
     submitBtn.setAttribute('type', 'submit');
     submitBtn.classList.add('btn', 'btn-primary');
+    const cancelBtn = document.createElement('INPUT');
+    cancelBtn.setAttribute('value', 'Cancel');
+    cancelBtn.setAttribute('id', 'cancel');
+    cancelBtn.setAttribute('type', 'submit');
+    cancelBtn.classList.add('btn', 'btn-danger');
     editForm.appendChild(submitBtn);
+    editForm.appendChild(cancelBtn);
     const taskArea = document.getElementsByClassName('task-area')[0];
+    taskArea.lastChild.remove();
     taskArea.appendChild(editForm);
-  } 
+    editFormFields(project,title, description, duedate, priority);
+  } ;
+
+  const editFormFields = ((project,title, description, duedate, priority) => {
+    let editTitle = document.getElementById('title');
+    editTitle.value = title;
+    let editDesc = document.getElementById('description');
+    editDesc.value = description;
+    let editDueDate = document.getElementById('duedate');
+    editDueDate.value = duedate;
+    let editPriority = document.getElementById('priority');
+    editPriority.value = priority;
+  });
+
+
   const allSiblings = function (elem) {
     let siblings = [];
     let sibling = elem.parentNode.firstChild;
