@@ -102,7 +102,6 @@ const ProjectForm = (() => {
         for (let i = 0; i < Projects.length; i++) {
           if (title == Projects[i].title) {
             Store.removeTodo(title);
-            Projects[i].items.splice(index - 1, 1);
           }
         }
       }

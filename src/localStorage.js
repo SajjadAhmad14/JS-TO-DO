@@ -37,6 +37,7 @@ class Store {
     for(let i=0; i<items.length; i++) {
       if(items[i].project == args) {
         items.splice(i, 1);
+        break;
       }
     }
 
