@@ -174,8 +174,6 @@ const ProjectForm = (() => {
     const ele = e.target;
     if (ele.classList.contains('btn-danger')) {
       ele.parentElement.parentElement.remove();
-      // let index = ele.parentElement.parentElement.firstChild.textContent;
-      // index = Number(index);
       const elem = ele.parentElement.parentElement.lastChild;
       const siblings = allSiblings(elem);
       const title = siblings[1].textContent;
