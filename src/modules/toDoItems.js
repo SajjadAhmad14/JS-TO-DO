@@ -1,4 +1,4 @@
-import Store from './localStorage.js'
+import Store from './localStorage';
 
 const items = Store.getTodo();
 

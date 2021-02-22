@@ -9,7 +9,7 @@ body {
 }
 
 @font-face {
-  font-family: 'MyFont';
+  font-family: '';
   src: url('./OpenSansCondensed-Bold.ttf') format('ttf');
   font-weight: 600;
   font-style: normal;

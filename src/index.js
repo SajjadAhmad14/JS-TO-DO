@@ -1,26 +1,24 @@
 import './style.css';
-import TodoItem from './properties';
+import TodoItem from './modules/properties';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ProjectForm from './newProject';
-import './addProject';
-import Project from './addProject';
-import Projects from './project';
+import Project from './modules/addProject';
+import ProjectForm from './modules/newProject';
+import Projects from './modules/project';
 import addToDoForm from './addToDo';
-import items from './toDoItems';
-import Store from './localStorage'
+import items from './modules/toDoItems';
+import Store from './modules/localStorage';
 
 window.addEventListener('DOMContentLoaded', ProjectForm.hideForm);
 
-//selectors
+// selectors
 const addSign = document.querySelector('#add-project');
 const form = document.getElementById('form');
 const viewProjectBtn = document.getElementById('view-project');
 const todobtn = document.getElementById('add-todo');
-const todoform = document.getElementById('todo-form');
 
 
-//functions
+// functions
 
 const clearProjectList = (container) => {
   document.querySelectorAll(container).forEach(project => project.remove());
@@ -28,26 +26,22 @@ const clearProjectList = (container) => {
 
 const filterProject = (project) => {
   let find = -1;
-  for (let i = 0; i < Projects.length; i++) {
-    if (project.title == Projects[i].title) {
+  for (let i = 0; i < Projects.length; i += 1) {
+    if (project.title === Projects[i].title) {
       find = 1;
       break;
     }
   }
-  if (find == -1) {
+  if (find === -1) {
     Projects.push(project);
     Store.addProject(project);
-  }
-  else {
-    alert('Project already exists!')
+  } else {
+    alert('Project already exists!');
   }
 };
 
-const hideTodoForm = (form) => {
-  form.style.display = 'none';
-};
 
-//event listners
+// event listners
 
 addSign.addEventListener('click', () => {
   ProjectForm.showForm();
@@ -68,16 +62,9 @@ viewProjectBtn.addEventListener('click', () => {
   ProjectForm.viewAllProject();
 });
 
-
-todobtn.addEventListener('click', () => {
-  const form = addToDoForm.todoForm();
-  createListObject(form);
-});
-
 const createListObject = (form) => {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const todobtn = document.getElementById('submit');
     const title = document.getElementById('title').value;
     const description = document.getElementById('description').value;
     const duedate = document.getElementById('duedate').value;
@@ -90,5 +77,9 @@ const createListObject = (form) => {
     addToDoForm.addList();
     form.reset();
   });
-
 };
+
+todobtn.addEventListener('click', () => {
+  const form = addToDoForm.todoForm();
+  createListObject(form);
+});

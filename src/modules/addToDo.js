@@ -51,7 +51,7 @@ const addToDoForm = (() => {
   });
 
   const itemProject = ((item) => {
-    const project = item.project;
+    const { project } = item;
     for (let i = 0; i < Projects.length; i += 1) {
       if (Projects[i].title === project) {
         Projects[i].items.push(item);
@@ -105,7 +105,7 @@ const addToDoForm = (() => {
     }
     todoitemDiv.appendChild(tbody);
   };
-  return { 
+  return {
     hideForm, todoForm, itemProject, addList,
   };
 })();

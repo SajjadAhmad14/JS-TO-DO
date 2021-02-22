@@ -1,8 +1,7 @@
 class Store {
-
   static getProject() {
     let projects;
-    if(localStorage.getItem('projects') === null) {
+    if (localStorage.getItem('projects') === null) {
       projects = [];
     } else {
       projects = JSON.parse(localStorage.getItem('projects'));
@@ -13,13 +12,13 @@ class Store {
   static addProject(project) {
     const projects = Store.getProject();
     projects.push(project);
-    localStorage.setItem('projects',JSON.stringify(projects));
+    localStorage.setItem('projects', JSON.stringify(projects));
   }
 
   static getTodo() {
     let items;
-    if(localStorage.getItem('items') === null) {
-      items =[];
+    if (localStorage.getItem('items') === null) {
+      items = [];
     } else {
       items = JSON.parse(localStorage.getItem('items'));
     }
@@ -34,8 +33,8 @@ class Store {
 
   static removeTodo(args) {
     const items = Store.getTodo();
-    for(let i=0; i<items.length; i++) {
-      if(items[i].project == args) {
+    for (let i = 0; i < items.length; i += 1) {
+      if (items[i].project === args) {
         items.splice(i, 1);
         break;
       }

@@ -9,7 +9,7 @@ module.exports = {
     port: 5501,
   },
   output: {
-   filename: 'main.js',
+    filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
   },
 
@@ -17,12 +17,12 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
       },
     ],
-  }
+  },
 };
