@@ -36,10 +36,16 @@ const ProjectForm = (() => {
     let x = e.target.textContent;
     let alltodos = Store.getTodo();
     console.log(alltodos);
+    let projectTodoList = [];
+    for(let i=0; i<alltodos.length; i++) {
+      if(alltodos[i].project === e.target.textContent) {
+        projectTodoList.push(alltodos[i]);
+      }
+    }
+
     for (let i = 0; i < Projects.length; i++) {
-      
       if (Projects[i].title === e.target.textContent) {
-        projectItemsTable(Projects[i].alltodos, Projects[i]);
+        projectItemsTable(projectTodoList, Projects[i]);
       }
     }
   });

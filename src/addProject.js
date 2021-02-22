@@ -1,4 +1,9 @@
-export default function Project(title) {
-  this.title = title;
-  this.items = [];
+class Project {
+  constructor(title) {
+    this.title = title;
+    this.items = [];
+  }
 }
+
+
+export default Project;
