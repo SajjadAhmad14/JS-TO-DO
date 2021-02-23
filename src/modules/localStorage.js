@@ -31,15 +31,29 @@ class Store {
     localStorage.setItem('items', JSON.stringify(items));
   }
 
-  static removeTodo(args) {
+  static removeTodo(projectTitle) {
     const items = Store.getTodo();
     for (let i = 0; i < items.length; i += 1) {
-      if (items[i].project === args) {
+      if (items[i].project === projectTitle) {
         items.splice(i, 1);
         break;
       }
     }
+    localStorage.setItem('items', JSON.stringify(items));
+  }
 
+  static editToDo(title, description, duedate, priority, project, index) {
+    const items = Store.getTodo();
+    for (let i = 0; i < items.length; i += 1) {
+      if (items[i].project === project && index - 1 === i) {
+        items[i].title = title;
+        items[i].description = description;
+        items[i].dueDate = duedate;
+        items[i].priority = priority;
+        items[i].project = project;
+        break;
+      }
+    }
     localStorage.setItem('items', JSON.stringify(items));
   }
 }

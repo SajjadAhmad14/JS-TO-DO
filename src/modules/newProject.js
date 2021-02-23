@@ -112,9 +112,10 @@ const ProjectForm = (() => {
     editPriority.value = priority;
   });
 
-  const editToDoForm = (project, title, description, duedate, priority) => {
+  const editToDoForm = (projectName, TaskTitle, description, dueDate, priority) => {
     const editForm = document.createElement('form');
-    editForm.classList.add('editToDoForm', 'w-50');
+    editForm.setAttribute('id', 'taks-edit-form');
+    editForm.classList.add('editToDoForm', 'w-50', 'm-auto');
     editForm.innerHTML = `
         <div class="form-group">
         <label for="title">Title:</label>
@@ -165,7 +166,7 @@ const ProjectForm = (() => {
     const taskArea = document.getElementsByClassName('task-area')[0];
     taskArea.lastChild.remove();
     taskArea.appendChild(editForm);
-    editFormFields(project, title, description, duedate, priority);
+    editFormFields(projectName, TaskTitle, description, dueDate, priority);
   };
 
   const todoContainer = document.getElementById('todo-table');
@@ -176,25 +177,40 @@ const ProjectForm = (() => {
       ele.parentElement.parentElement.remove();
       const elem = ele.parentElement.parentElement.lastChild;
       const siblings = allSiblings(elem);
-      const title = siblings[1].textContent;
+      const projectTitle = siblings[1].textContent;
       for (let i = 0; i < Projects.length; i += 1) {
-        if (title === Projects[i].title) {
-          Store.removeTodo(title);
+        if (projectTitle === Projects[i].title) {
+          Store.removeTodo(projectTitle);
         }
       }
-    } else {
-      const row = ele.parentElement.parentElement.parentElement;
-      const rowElements = row.children;
-      const project = rowElements[1].textContent;
-      const title = rowElements[2].textContent;
-      const description = rowElements[3].textContent;
-      const duedate = rowElements[4].textContent;
-      const priority = rowElements[5].textContent;
-      console.log(project, title, description, duedate, priority);
-      editToDoForm(project, title, description, duedate, priority);
+    }
+    if (ele.classList.contains('btn-success')) {
+      const elem = ele.parentElement.parentElement.firstChild;
+      const index = elem.textContent;
+      const siblings = allSiblings(elem);
+      const projectName = siblings[0].textContent;
+      const taskTitle = siblings[1].textContent;
+      const taskDescription = siblings[2].textContent;
+      const dueDate = siblings[3].textContent;
+      const priority = siblings[4].textContent;
+      editToDoForm(projectName, taskTitle, taskDescription, dueDate, priority);
+      const form = document.getElementById('taks-edit-form');
+      editTaskList(form, index);
     }
   });
 
+  const editTaskList = (form, index) => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const title = document.getElementById('title').value;
+      const description = document.getElementById('description').value;
+      const duedate = document.getElementById('duedate').value;
+      const priority = document.getElementById('priority').value;
+      const project = document.getElementById('project').value;
+      Store.editToDo(title, description, duedate, priority, project, index);
+      form.reset();
+    });
+  };
   return { showForm, hideForm, viewAllProject };
 })();
 
