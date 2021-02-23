@@ -1,5 +1,4 @@
 import Projects from './project';
-import items from './toDoItems';
 
 const addToDoForm = (() => {
   const todoForm = (() => {
@@ -60,7 +59,6 @@ const addToDoForm = (() => {
     document.getElementById('todo-form').style.display = 'none';
   });
 
-  return {
-    hideForm, todoForm};
+  return { hideForm, todoForm };
 })();
 export default addToDoForm;

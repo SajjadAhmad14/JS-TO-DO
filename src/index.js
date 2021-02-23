@@ -15,7 +15,6 @@ ProjectForm.viewAllProject();
 // selectors
 const addSign = document.querySelector('#add-project');
 const form = document.getElementById('form');
-const viewProjectBtn = document.getElementById('view-project');
 const todobtn = document.getElementById('add-todo');
 const cancelProjectFormBtn = document.getElementById('cancelproject-form');
 
@@ -23,10 +22,6 @@ const cancelProjectFormBtn = document.getElementById('cancelproject-form');
 
 const clearProjectList = (container) => {
   document.querySelectorAll(container).forEach(project => project.remove());
-};
-
-const removeTodoForm = () => {
-  document.getElementById('todo-form').firstChild.remove();
 };
 
 const filterProject = (project) => {
@@ -58,14 +53,13 @@ form.addEventListener('submit', (e) => {
   const project = new Project(title);
   filterProject(project);
   document.getElementById('form').reset();
-  document.getElementById('form').style.display ='none';
+  document.getElementById('form').style.display = 'none';
   clearProjectList('.project-list');
   ProjectForm.viewAllProject();
 });
 
 const createListObject = (form) => {
   const todoCancelBtn = document.getElementById('canceltodo-form');
-  todoCancelBtn;
   todoCancelBtn.addEventListener('click', () => {
     todobtn.style.display = 'block';
     form.style.display = 'none';
@@ -83,16 +77,15 @@ const createListObject = (form) => {
     Store.addTodo(item);
     form.reset();
   });
-
 };
 
 todobtn.addEventListener('click', () => {
-    const form = addToDoForm.todoForm();
-    todobtn.style.display = 'none';
-    createListObject(form);
+  const form = addToDoForm.todoForm();
+  todobtn.style.display = 'none';
+  createListObject(form);
 });
 
 cancelProjectFormBtn.addEventListener('click', () => {
-  let form = document.getElementById('form');
+  const form = document.getElementById('form');
   form.style.display = 'none';
 });
