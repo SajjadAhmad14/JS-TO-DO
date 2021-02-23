@@ -63,17 +63,11 @@ form.addEventListener('submit', (e) => {
   ProjectForm.viewAllProject();
 });
 
-// viewProjectBtn.addEventListener('click', () => {
-//   clearProjectList('.project-list');
-//   ProjectForm.viewAllProject();
-// });
-
 const createListObject = (form) => {
   const todoCancelBtn = document.getElementById('canceltodo-form');
   todoCancelBtn;
   todoCancelBtn.addEventListener('click', () => {
     todobtn.style.display = 'block';
-    console.log("hello cancel btn");
     form.style.display = 'none';
   });
 
@@ -86,9 +80,7 @@ const createListObject = (form) => {
     const project = document.getElementById('project').value;
     const item = new TodoItem(title, description, duedate, priority, project);
     items.push(item);
-    // addToDoForm.itemProject(item);
     Store.addTodo(item);
-    // addToDoForm.addList();
     form.reset();
   });
 

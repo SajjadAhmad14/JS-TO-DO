@@ -56,63 +56,11 @@ const addToDoForm = (() => {
     return todoForm;
   });
 
-  const itemProject = ((item) => {
-    const { project } = item;
-    for (let i = 0; i < Projects.length; i += 1) {
-      if (Projects[i].title === project) {
-        Projects[i].items.push(item);
-      }
-    }
-  });
-
   const hideForm = (() => {
     document.getElementById('todo-form').style.display = 'none';
   });
 
-  const addList = () => {
-    const todoitemDiv = document.getElementById('todo-items');
-    if (items.length === 1) {
-      const table = document.createElement('table');
-      table.setAttribute('class', 'table');
-      const thead = document.createElement('thead');
-      const tr = document.createElement('tr');
-      tr.setAttribute('class', 'todo-row');
-      const th1 = document.createElement('th');
-      th1.textContent = 'Title';
-      const th2 = document.createElement('th');
-      th2.textContent = 'Description';
-      const th3 = document.createElement('th');
-      th3.textContent = 'Due Date';
-      const th4 = document.createElement('th');
-      th4.textContent = 'Priority';
-      const th5 = document.createElement('th');
-      th5.textContent = 'Project';
-
-      tr.appendChild(th1);
-      tr.appendChild(th2);
-      tr.appendChild(th3);
-      tr.appendChild(th4);
-      tr.appendChild(th5);
-      thead.appendChild(tr);
-      table.appendChild(thead);
-      todoitemDiv.appendChild(table);
-    }
-    const tbody = document.createElement('tbody');
-    const row = document.createElement('tr');
-    for (let i = 0; i < items.length; i += 1) {
-      row.innerHTML = `
-      <td class="mx-4">${items[i].title}</td>
-      <td class="mx-4">${items[i].description}</td>
-      <td class="mx-4">${items[i].dueDate}</td>
-      <td class="mx-4">${items[i].priority}</td>
-      <td class="mx-4">${items[i].project}</td>
-      `;
-      tbody.appendChild(row);
-    }
-    todoitemDiv.appendChild(tbody);
-  };
   return {
-    hideForm, todoForm, itemProject, addList,
-  };
+    hideForm, todoForm};
 })();
 export default addToDoForm;

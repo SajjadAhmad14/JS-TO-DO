@@ -181,7 +181,8 @@ const ProjectForm = (() => {
     }
     if (ele.classList.contains('btn-success')) {
       const elem = ele.parentElement.parentElement.firstChild;
-      const index = elem.textContent;
+      const index = (elem.textContent)-1;
+      console.log(index);
       const siblings = allSiblings(elem);
       const projectName = siblings[0].textContent;
       const taskTitle = siblings[1].textContent;

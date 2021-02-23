@@ -45,7 +45,7 @@ class Store {
   static editToDo(title, description, duedate, priority, project, index) {
     const items = Store.getTodo();
     for (let i = 0; i < items.length; i += 1) {
-      if (items[i].project === project && index - 1 === i) {
+      if (items[i].project === project && index === i) {
         items[i].title = title;
         items[i].description = description;
         items[i].dueDate = duedate;
