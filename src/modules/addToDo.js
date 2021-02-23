@@ -46,6 +46,12 @@ const addToDoForm = (() => {
     submitBtn.setAttribute('type', 'submit');
     submitBtn.classList.add('btn', 'btn-primary');
     todoForm.appendChild(submitBtn);
+    const cancelBtn = document.createElement('input');
+    cancelBtn.setAttribute('id', 'canceltodo-form');
+    cancelBtn.setAttribute('type', 'button');
+    cancelBtn.classList.add('btn', 'btn-light');
+    cancelBtn.setAttribute('value', 'Cancel');
+    todoForm.appendChild(cancelBtn);
     todoContainer.appendChild(todoForm);
     return todoForm;
   });

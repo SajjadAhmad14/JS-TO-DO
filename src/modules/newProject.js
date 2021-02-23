@@ -68,6 +68,7 @@ const ProjectForm = (() => {
     for (let i = 0; i < Projects.length; i += 1) {
       if (Projects[i].title === e.target.textContent) {
         projectItemsTable(projectTodoList, Projects[i]);
+        projectItemsTable(projectTodoList, Projects[i]);
       }
     }
   });
