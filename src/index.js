@@ -10,12 +10,14 @@ import items from './modules/toDoItems';
 import Store from './modules/localStorage';
 
 window.addEventListener('DOMContentLoaded', ProjectForm.hideForm);
+ProjectForm.viewAllProject();
 
 // selectors
 const addSign = document.querySelector('#add-project');
 const form = document.getElementById('form');
 const viewProjectBtn = document.getElementById('view-project');
 const todobtn = document.getElementById('add-todo');
+const cancelProjectFormBtn = document.getElementById('cancelproject-form');
 
 
 // functions
@@ -53,6 +55,7 @@ form.addEventListener('submit', (e) => {
   const project = new Project(title);
   filterProject(project);
   document.getElementById('form').reset();
+  document.getElementById('form').style.display ='none';
   clearProjectList('.project-list');
   ProjectForm.viewAllProject();
 });
@@ -82,4 +85,9 @@ const createListObject = (form) => {
 todobtn.addEventListener('click', () => {
   const form = addToDoForm.todoForm();
   createListObject(form);
+});
+
+cancelProjectFormBtn.addEventListener('click', () => {
+  let form = document.getElementById('form');
+  form.style.display = 'none';
 });
