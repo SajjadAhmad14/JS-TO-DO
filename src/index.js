@@ -26,7 +26,7 @@ const clearProjectList = (container) => {
 };
 
 const removeTodoForm = () => {
-  console.log(document.getElementById('todo-form').firstChild.remove());
+  document.getElementById('todo-form').firstChild.remove();
 };
 
 const filterProject = (project) => {
@@ -70,7 +70,7 @@ form.addEventListener('submit', (e) => {
 
 const createListObject = (form) => {
   const todoCancelBtn = document.getElementById('canceltodo-form');
-  console.log(todoCancelBtn);
+  todoCancelBtn;
   todoCancelBtn.addEventListener('click', () => {
     todobtn.style.display = 'block';
     console.log("hello cancel btn");
@@ -86,7 +86,7 @@ const createListObject = (form) => {
     const project = document.getElementById('project').value;
     const item = new TodoItem(title, description, duedate, priority, project);
     items.push(item);
-    addToDoForm.itemProject(item);
+    // addToDoForm.itemProject(item);
     Store.addTodo(item);
     // addToDoForm.addList();
     form.reset();

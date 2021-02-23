@@ -10,23 +10,23 @@ const ProjectForm = (() => {
     document.getElementById('form').style.display = 'none';
   });
 
-  const projectItemsTable = ((projectItemsArray, project) => {
+  const projectItemsTable = ((projectItemsArray, project, index) => {
     const tbleBody = document.getElementById('table-body');
-    for (let i = 0; i < projectItemsArray.length; i += 1) {
+
       const row = document.createElement('tr');
       row.setAttribute('class', 'table-row');
       const td0 = document.createElement('td');
-      td0.textContent = i + 1;
+      td0.textContent = index + 1;
       const td1 = document.createElement('td');
-      td1.textContent = project.title;
+      td1.textContent = project;
       const td2 = document.createElement('td');
-      td2.textContent = projectItemsArray[i].title;
+      td2.textContent = projectItemsArray.title;
       const tddescr = document.createElement('td');
-      tddescr.textContent = projectItemsArray[i].description;
+      tddescr.textContent = projectItemsArray.description;
       const td3 = document.createElement('td');
-      td3.textContent = projectItemsArray[i].dueDate;
+      td3.textContent = projectItemsArray.dueDate;
       const tdpriority = document.createElement('td');
-      tdpriority.textContent = projectItemsArray[i].priority;
+      tdpriority.textContent = projectItemsArray.priority;
       const td4 = document.createElement('td');
       const editBtn = document.createElement('button');
       editBtn.innerHTML = '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>';
@@ -50,26 +50,20 @@ const ProjectForm = (() => {
       row.appendChild(td4);
       row.appendChild(td5);
       tbleBody.appendChild(row);
-    }
   });
 
   const projectTodo = ((e) => {
     (() => {
       document.querySelectorAll('.table-row').forEach(row => row.remove());
     })();
-    const alltodos = Store.getTodo();
+    const items = Store.getTodo();
     const projectTodoList = [];
-    for (let i = 0; i < alltodos.length; i += 1) {
-      if (alltodos[i].project === e.target.textContent) {
-        projectTodoList.push(alltodos[i]);
-      }
-    }
 
-    for (let i = 0; i < Projects.length; i += 1) {
-      if (Projects[i].title === e.target.textContent) {
-        projectItemsTable(projectTodoList, Projects[i]);
-        projectItemsTable(projectTodoList, Projects[i]);
+    for (let i = 0; i < items.length; i += 1) {
+      if (items[i].project === e.target.textContent) {
+        projectItemsTable(items[i], items[i].project, i);
       }
+
     }
   });
 
