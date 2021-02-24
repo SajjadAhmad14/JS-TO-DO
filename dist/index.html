@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/a0d360eeab.js" crossorigin="anonymous"></script>
+  <title>To-Do List</title>
+</head>
+
+<body>
+  <header class="heading-container">
+    <h1>To Do</h1>
+  </header>
+  <main class="project-container">
+    <aside class='side-bar'>
+      <div class='d-flex justify-content-around'>
+        <h2 class="project-heading">Add Projects<i class="fa fa-plus" aria-hidden="true" id="add-project"></i></h2>
+      </div>
+      <form id='form'>
+        <div class="form-group my-4">
+          <input type="text" class="form-control w-60 m-auto" id="project-title" required=true
+            placeholder="Enter project title!">
+        </div>
+        <div class="d-flex my-4">
+          <button type="submit" id="submit-form" name="submit" class="btn btn-primary">Submit</button>
+          <button type="button" id="cancelproject-form" class="btn btn-danger">Cancel</button>
+        </div>
+      </form>
+      <div class="all-project my-4" id="all-projects">
+      </div>
+    </aside>
+    <div class='task-area'>
+      <table class="table table-dark table-hover w-50 m-auto mb-4 text-center" id='todo-table'>
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Project Name</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Due Date</th>
+            <th scope="col">Priority</th>
+            <th scope="col" colspan='2'>Actions</th>
+          </tr>
+        </thead>
+        <tbody id='table-body'>
+
+        </tbody>
+      </table>
+      <h3 class="todo-heading">Add To Do</h3>
+      <button type="button" class="add-todo-btn" id="add-todo">Add To Do</button>
+      <div class="todo-form" id="todo-form">
+      </div>
+      <div class="todo-items" id="todo-items"></div>
+    </div>
+  </main>
+  <script src='main.js'></script>
+</body>
+</html>

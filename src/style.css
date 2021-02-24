@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+}
+
+@font-face {
+  font-family: 'Open Sans Condensed', sans-serif;
+  src: url('./OpenSansCondensed-Bold.ttf') format('ttf');
+  font-weight: 600;
+  font-style: normal;
+}
+
+.heading-container {
+  font-family: 'Open Sans Condensed', sans-serif;
+  background-color: rgb(224, 188, 194);
+  padding: 20px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.project-container {
+  background-color: silver;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  min-height: 100vh;
+}
+
+.side-bar {
+  background-color: lightblue;
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+.fas .fa-plus {
+  font-size: 30px;
+}
+
+.project-heading {
+  font-family: 'Open Sans Condensed', sans-serif;
+  text-align: center;
+  font-weight: bold;
+}
+
+.todo-heading {
+  font-family: 'Open Sans Condensed', sans-serif;
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.add-todo-btn {
+  display: block;
+  width: 20%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.todo-form {
+  width: 40%;
+  margin: 0 auto;
+}
+
+label {
+  margin: 10px;
+}
+
+.btn {
+  width: 30%;
+  margin: 0 auto;
+}
+
+.todo-items {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.todo-table {
+  border: 1px solid black;
+  justify-content: space-between;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.todo-row {
+  width: 100%;
+}
+
+.all-project {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.project-list a {
+  color: #000;
+  text-decoration: none;
+}
+
+.project-list a:hover {
+  text-decoration: underline;
+  color: #00f;
+}
