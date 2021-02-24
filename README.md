@@ -5,6 +5,9 @@
  User can add tasks to projects.
  User can edit a task or delete it.
 
+# This app is Live
+<a href = 'https://reverent-goldberg-324cfe.netlify.app/'>Here</a>
+
 ![screenshot](./src/screenshot.png)
 
 ## Set Up Project Locally
@@ -29,6 +32,7 @@ Run `npm install`<br>
 - CSS
 - Font Awsome 
 - VScode
+- Netlify
 
 ## Authors
 
