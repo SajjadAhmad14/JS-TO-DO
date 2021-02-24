@@ -10,6 +10,7 @@ import items from './modules/toDoItems';
 import Store from './modules/localStorage';
 
 window.addEventListener('DOMContentLoaded', ProjectForm.hideForm);
+setDefault();
 ProjectForm.viewAllProject();
 
 // selectors
@@ -19,6 +20,16 @@ const todobtn = document.getElementById('add-todo');
 const cancelProjectFormBtn = document.getElementById('cancelproject-form');
 
 // functions
+
+function setDefault() {
+  const data = Store.getProject();
+  console.log(data);
+  if(data.length >= 0) {
+    const project1 = new Project('TestProject');
+    Projects.push(project1);
+    Store.addProject(Projects);
+  }
+}
 
 const clearProjectList = (container) => {
   document.querySelectorAll(container).forEach(project => project.remove());
