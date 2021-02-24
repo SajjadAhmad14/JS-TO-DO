@@ -6,7 +6,7 @@
  User can edit a task or delete it.
 
 # This app is Live
-<a href = 'https://reverent-goldberg-324cfe.netlify.app/'>Here</a>
+<a href = 'https://reverent-goldberg-324cfe.netlify.app/'><strong>Here</strong></a>
 
 ![screenshot](./src/screenshot.png)
 
