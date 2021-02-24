@@ -34,9 +34,9 @@ Run `npm install`<br>
 
 👤 **Jyoti Rai**
 
-- GitHub: [@jrai0792](https://github.com/jrai0792)
-- LinkedIn: [@rai-jyoti](https://www.linkedin.com/in/rai-jyoti)
-- Twitter: [@jyotirai0792](https://twitter.com/jyotirai0792)
+- GitHub: [@JyotiRai](https://github.com/jrai0792)
+- LinkedIn: [@JyotiRai](https://www.linkedin.com/in/rai-jyoti)
+- Twitter: [@JyotiRai](https://twitter.com/jyotirai0792)
 
 👤 **Sajjad Ahmad**
 
