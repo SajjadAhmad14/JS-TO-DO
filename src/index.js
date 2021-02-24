@@ -10,8 +10,7 @@ import items from './modules/toDoItems';
 import Store from './modules/localStorage';
 
 window.addEventListener('DOMContentLoaded', ProjectForm.hideForm);
-setDefault();
-ProjectForm.viewAllProject();
+
 
 // selectors
 const addSign = document.querySelector('#add-project');
@@ -23,13 +22,14 @@ const cancelProjectFormBtn = document.getElementById('cancelproject-form');
 
 function setDefault() {
   const data = Store.getProject();
-  console.log(data);
-  if(data.length >= 0) {
+  if (data.length >= 0) {
     const project1 = new Project('TestProject');
     Projects.push(project1);
     Store.addProject(Projects);
   }
 }
+setDefault();
+ProjectForm.viewAllProject();
 
 const clearProjectList = (container) => {
   document.querySelectorAll(container).forEach(project => project.remove());
