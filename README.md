@@ -18,7 +18,7 @@ or with https<br>
 `https://github.com/SajjadAhmad14/JS-TO-DO.git`.<br>
 **Step 2**<br>
 Run `cd JS-TO-DO`<br>
-**Step 2**<br>
+**Step 3**<br>
 Run `npm install`<br>
 
 ## Built With
@@ -34,15 +34,15 @@ Run `npm install`<br>
 
 👤 **Jyoti Rai**
 
-- GitHub: [@githubhandle](https://github.com/jrai0792)
-- LinkedIn: [@linkedin](https://www.linkedin.com/in/rai-jyoti)
-- Twitter: [@twitter](https://twitter.com/jyotirai0792)
+- GitHub: [@jrai0792](https://github.com/jrai0792)
+- LinkedIn: [@rai-jyoti](https://www.linkedin.com/in/rai-jyoti)
+- Twitter: [@jyotirai0792](https://twitter.com/jyotirai0792)
 
 👤 **Sajjad Ahmad**
 
-- GitHub: [@githubhandle](https://github.com/SajjadAhmad14)
-- Twitter: [@twitterhandle](https://twitter.com/Sajjad_Ahmad14)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/sajjadahmad14)
+- GitHub: [@SajjadAhmad14](https://github.com/SajjadAhmad14)
+- Twitter: [@Sajjad_Ahmad14](https://twitter.com/Sajjad_Ahmad14)
+- LinkedIn: [@sajjadahmad14](https://www.linkedin.com/in/sajjadahmad14)
 
 ## 🤝 Contributing
 
