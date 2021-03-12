@@ -11,7 +11,6 @@ import Store from './modules/localStorage';
 
 window.addEventListener('DOMContentLoaded', ProjectForm.hideForm);
 
-
 // selectors
 const addSign = document.querySelector('#add-project');
 const form = document.getElementById('form');
@@ -50,7 +49,6 @@ const filterProject = (project) => {
     alert('Project already exists!');
   }
 };
-
 
 // event listners
 
