@@ -32,13 +32,3 @@ test('Length of items array should decrement by 1', () => {
   items = Store.getTodo();
   expect(items.length).toBe(0);
 })
-
-// test('Update the fields of todo item', () => {
-//   items.push(firstTodo);
-//   console.log(items[0].title);
-//   const updateDetails = Store.editToDo("Update title", "Update description", "2021-05-05", "Medium", "First Project", 1);
-//   items.push(updateDetails);
-//   // items = Store.getTodo();
-//   console.log(items);
-//   expect(updateDetails.title).toBe("Update title");
-// });

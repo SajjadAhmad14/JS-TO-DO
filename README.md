@@ -24,6 +24,11 @@ Run `cd JS-TO-DO`<br>
 **Step 3**<br>
 Run `npm install`<br>
 
+## Testing
+
+Run `cd JS-TO-DO`<br>
+Run `npm run test`<br>
+
 ## Built With
 
 - Javascript
